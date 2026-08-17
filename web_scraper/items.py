@@ -17,5 +17,5 @@ class marketitem(scrapy.Item):
     timestamp=scrapy.Field()
     gold_18k=scrapy.Field()
     ons_gold=scrapy.Field()
-    usd=scrapy.Field()
+    silver=scrapy.Field()
     coin=scrapy.Field()
