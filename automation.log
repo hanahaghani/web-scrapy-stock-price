@@ -1,0 +1,959 @@
+Running Scrapy...
+2026-08-29 12:50:02 [scrapy.utils.log] INFO: Scrapy 2.17.0 started (bot: web_scraper)
+2026-08-29 12:50:02 [scrapy.utils.log] INFO: Versions:
+{'lxml': '6.1.1',
+ 'libxml2': '2.14.6',
+ 'cssselect': '1.5.0',
+ 'parsel': '1.11.0',
+ 'w3lib': '2.4.1',
+ 'Twisted': '26.4.0',
+ 'Python': '3.13.7 (main, Mar  3 2026, 12:19:54) [GCC 15.2.0]',
+ 'pyOpenSSL': '26.4.0 (OpenSSL 4.0.1 9 Jun 2026)',
+ 'cryptography': '50.0.0',
+ 'Platform': 'Linux-6.17.0-41-generic-x86_64-with-glibc2.42'}
+2026-08-29 12:50:02 [scrapy.crawler] DEBUG: Using AsyncCrawlerProcess
+2026-08-29 12:50:02 [asyncio] DEBUG: Using selector: EpollSelector
+2026-08-29 12:50:02 [scrapy.addons] INFO: Enabled addons:
+[]
+2026-08-29 12:50:02 [scrapy.utils.log] DEBUG: Using reactor: twisted.internet.asyncioreactor.AsyncioSelectorReactor
+2026-08-29 12:50:02 [scrapy.utils.log] DEBUG: Using asyncio event loop: asyncio.unix_events._UnixSelectorEventLoop
+2026-08-29 12:50:02 [scrapy.extensions.telnet] INFO: Telnet Password: 7a95ca8184478e37
+2026-08-29 12:50:02 [scrapy.middleware] INFO: Enabled extensions:
+['scrapy.extensions.corestats.CoreStats',
+ 'scrapy.extensions.logcount.LogCount',
+ 'scrapy.extensions.telnet.TelnetConsole',
+ 'scrapy.extensions.memusage.MemoryUsage',
+ 'scrapy.extensions.logstats.LogStats']
+2026-08-29 12:50:02 [scrapy.crawler] INFO: Overridden settings:
+{'BOT_NAME': 'web_scraper',
+ 'CONCURRENT_REQUESTS_PER_DOMAIN': 1,
+ 'DOWNLOAD_DELAY': 1,
+ 'FEED_EXPORT_ENCODING': 'utf-8',
+ 'NEWSPIDER_MODULE': 'web_scraper.spiders',
+ 'ROBOTSTXT_OBEY': True,
+ 'SPIDER_MODULES': ['web_scraper.spiders']}
+2026-08-29 12:50:02 [scrapy.middleware] INFO: Enabled downloader middlewares:
+['scrapy.downloadermiddlewares.offsite.OffsiteMiddleware',
+ 'scrapy.downloadermiddlewares.robotstxt.RobotsTxtMiddleware',
+ 'scrapy.downloadermiddlewares.httpauth.HttpAuthMiddleware',
+ 'scrapy.downloadermiddlewares.downloadtimeout.DownloadTimeoutMiddleware',
+ 'scrapy.downloadermiddlewares.defaultheaders.DefaultHeadersMiddleware',
+ 'scrapy.downloadermiddlewares.useragent.UserAgentMiddleware',
+ 'scrapy.downloadermiddlewares.retry.RetryMiddleware',
+ 'scrapy.downloadermiddlewares.redirect.MetaRefreshMiddleware',
+ 'scrapy.downloadermiddlewares.httpcompression.HttpCompressionMiddleware',
+ 'scrapy.downloadermiddlewares.redirect.RedirectMiddleware',
+ 'scrapy.downloadermiddlewares.cookies.CookiesMiddleware',
+ 'scrapy.downloadermiddlewares.httpproxy.HttpProxyMiddleware',
+ 'scrapy.downloadermiddlewares.stats.DownloaderStats']
+2026-08-29 12:50:02 [scrapy.middleware] INFO: Enabled spider middlewares:
+['scrapy.spidermiddlewares.start.StartSpiderMiddleware',
+ 'scrapy.spidermiddlewares.httperror.HttpErrorMiddleware',
+ 'scrapy.spidermiddlewares.referer.RefererMiddleware',
+ 'scrapy.spidermiddlewares.urllength.UrlLengthMiddleware',
+ 'scrapy.spidermiddlewares.depth.DepthMiddleware']
+2026-08-29 12:50:02 [scrapy.middleware] INFO: Enabled item pipelines:
+['web_scraper.pipelines.WebScraperPipeline']
+2026-08-29 12:50:02 [py.warnings] WARNING: /home/pc/Documents/web scrapy/web_scraper/.venv/lib/python3.13/site-packages/scrapy/pipelines/__init__.py:43: ScrapyDeprecationWarning: WebScraperPipeline.open_spider() requires a spider argument, this is deprecated and the argument will not be passed in future Scrapy versions. If you need to access the spider instance you can save the crawler instance passed to from_crawler() and use its spider attribute.
+  self._check_mw_method_spider_arg(mw.open_spider)
+
+2026-08-29 12:50:02 [py.warnings] WARNING: /home/pc/Documents/web scrapy/web_scraper/.venv/lib/python3.13/site-packages/scrapy/pipelines/__init__.py:46: ScrapyDeprecationWarning: WebScraperPipeline.close_spider() requires a spider argument, this is deprecated and the argument will not be passed in future Scrapy versions. If you need to access the spider instance you can save the crawler instance passed to from_crawler() and use its spider attribute.
+  self._check_mw_method_spider_arg(mw.close_spider)
+
+2026-08-29 12:50:02 [py.warnings] WARNING: /home/pc/Documents/web scrapy/web_scraper/.venv/lib/python3.13/site-packages/scrapy/pipelines/__init__.py:49: ScrapyDeprecationWarning: WebScraperPipeline.process_item() requires a spider argument, this is deprecated and the argument will not be passed in future Scrapy versions. If you need to access the spider instance you can save the crawler instance passed to from_crawler() and use its spider attribute.
+  self._check_mw_method_spider_arg(mw.process_item)
+
+2026-08-29 12:50:02 [scrapy.core.engine] INFO: Spider opened
+2026-08-29 12:50:02 [scrapy.extensions.logstats] INFO: Crawled 0 pages (at 0 pages/min), scraped 0 items (at 0 items/min)
+2026-08-29 12:50:02 [scrapy.extensions.telnet] INFO: Telnet console listening on 127.0.0.1:6023
+2026-08-29 12:50:05 [scrapy.core.engine] DEBUG: Crawled (404) <GET https://call2.tgju.org/robots.txt> (referer: None)
+2026-08-29 12:50:05 [protego._protego] DEBUG: Rule at line 2 without any user agent to enforce it on.
+2026-08-29 12:50:05 [protego._protego] DEBUG: Rule at line 6 without any user agent to enforce it on.
+2026-08-29 12:50:07 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://call2.tgju.org/ajax.json?rev=Yt2ebnCSHS0J1dKrN7wGxtpR3g9t28WVgweDXFYgrGTcBEbsXyxKgBnDEcHq> (referer: None)
+2026-08-29 12:50:07 [scrapy.core.scraper] DEBUG: Scraped from <200 https://call2.tgju.org/ajax.json?rev=Yt2ebnCSHS0J1dKrN7wGxtpR3g9t28WVgweDXFYgrGTcBEbsXyxKgBnDEcHq>
+{'coin': '2,170,050,000',
+ 'gold_18k': '218,720,000',
+ 'ons_gold': '4,454.08',
+ 'silver': '4,541,900',
+ 'timestamp': '2026-08-29  12:50:07'}
+2026-08-29 12:50:07 [scrapy.core.engine] INFO: Closing spider (finished)
+2026-08-29 12:50:07 [scrapy.statscollectors] INFO: Dumping Scrapy stats:
+{'downloader/request_bytes': 514,
+ 'downloader/request_count': 2,
+ 'downloader/request_method_count/GET': 2,
+ 'downloader/response_bytes': 25120,
+ 'downloader/response_count': 2,
+ 'downloader/response_status_count/200': 1,
+ 'downloader/response_status_count/404': 1,
+ 'elapsed_time_seconds': 5.248528718999296,
+ 'finish_reason': 'finished',
+ 'finish_time': datetime.datetime(2026, 8, 29, 9, 20, 7, 708076, tzinfo=datetime.timezone.utc),
+ 'httpcompression/response_bytes': 147909,
+ 'httpcompression/response_count': 2,
+ 'item_scraped_count': 1,
+ 'items_per_minute': 12.0,
+ 'log_count/DEBUG': 5,
+ 'log_count/INFO': 3,
+ 'memusage/max': 71651328,
+ 'memusage/startup': 71651328,
+ 'response_received_count': 2,
+ 'responses_per_minute': 24.0,
+ 'robotstxt/request_count': 1,
+ 'robotstxt/response_count': 1,
+ 'robotstxt/response_status_count/404': 1,
+ 'scheduler/dequeued': 1,
+ 'scheduler/dequeued/memory': 1,
+ 'scheduler/enqueued': 1,
+ 'scheduler/enqueued/memory': 1,
+ 'start_time': datetime.datetime(2026, 8, 29, 9, 20, 2, 459554, tzinfo=datetime.timezone.utc)}
+2026-08-29 12:50:07 [scrapy.core.engine] INFO: Spider closed (finished)
+Running cleaning...
+<class 'pandas.DataFrame'>
+RangeIndex: 6 entries, 0 to 5
+Data columns (total 5 columns):
+ #   Column     Non-Null Count  Dtype
+---  ------     --------------  -----
+ 0   timestamp  6 non-null      str  
+ 1   gold_18k   6 non-null      str  
+ 2   ons_gold   6 non-null      str  
+ 3   silver     6 non-null      str  
+ 4   coin       6 non-null      str  
+dtypes: str(5)
+memory usage: 372.0 bytes
+              timestamp     gold_18k  ons_gold     silver           coin
+0  2026-08-29  11:08:52  217,464,000  4,454.08  4,598,700  2,160,100,000
+1  2026-08-29  11:23:32  217,464,000  4,454.08  4,598,700  2,160,100,000
+2  2026-08-29  11:43:33  217,464,000  4,454.08  4,598,700  2,160,100,000
+3  2026-08-29  12:10:12  218,720,000  4,454.08  4,541,900  2,170,050,000
+4  2026-08-29  12:49:05  218,720,000  4,454.08  4,541,900  2,170,050,000
+<class 'pandas.DataFrame'>
+RangeIndex: 6 entries, 0 to 5
+Data columns (total 5 columns):
+ #   Column     Non-Null Count  Dtype  
+---  ------     --------------  -----  
+ 0   timestamp  6 non-null      str    
+ 1   gold_18k   6 non-null      str    
+ 2   ons_gold   6 non-null      float64
+ 3   silver     6 non-null      str    
+ 4   coin       6 non-null      str    
+dtypes: float64(1), str(4)
+memory usage: 372.0 bytes
+None
+<class 'pandas.DataFrame'>
+RangeIndex: 6 entries, 0 to 5
+Data columns (total 5 columns):
+ #   Column     Non-Null Count  Dtype  
+---  ------     --------------  -----  
+ 0   timestamp  6 non-null      str    
+ 1   gold_18k   6 non-null      str    
+ 2   ons_gold   6 non-null      float64
+ 3   silver     6 non-null      int64  
+ 4   coin       6 non-null      str    
+dtypes: float64(1), int64(1), str(3)
+memory usage: 372.0 bytes
+None
+<class 'pandas.DataFrame'>
+RangeIndex: 6 entries, 0 to 5
+Data columns (total 5 columns):
+ #   Column     Non-Null Count  Dtype  
+---  ------     --------------  -----  
+ 0   timestamp  6 non-null      str    
+ 1   gold_18k   6 non-null      str    
+ 2   ons_gold   6 non-null      float64
+ 3   silver     6 non-null      int64  
+ 4   coin       6 non-null      int64  
+dtypes: float64(1), int64(2), str(2)
+memory usage: 372.0 bytes
+None
+<class 'pandas.DataFrame'>
+RangeIndex: 6 entries, 0 to 5
+Data columns (total 5 columns):
+ #   Column     Non-Null Count  Dtype  
+---  ------     --------------  -----  
+ 0   timestamp  6 non-null      str    
+ 1   gold_18k   6 non-null      int64  
+ 2   ons_gold   6 non-null      float64
+ 3   silver     6 non-null      int64  
+ 4   coin       6 non-null      int64  
+dtypes: float64(1), int64(3), str(1)
+memory usage: 372.0 bytes
+None
+<class 'pandas.DataFrame'>
+RangeIndex: 6 entries, 0 to 5
+Data columns (total 5 columns):
+ #   Column     Non-Null Count  Dtype         
+---  ------     --------------  -----         
+ 0   timestamp  6 non-null      datetime64[us]
+ 1   gold_18k   6 non-null      int64         
+ 2   ons_gold   6 non-null      float64       
+ 3   silver     6 non-null      int64         
+ 4   coin       6 non-null      int64         
+dtypes: datetime64[us](1), float64(1), int64(3)
+memory usage: 372.0 bytes
+            timestamp   gold_18k  ons_gold   silver        coin
+0 2026-08-29 11:08:52  217464000   4454.08  4598700  2160100000
+1 2026-08-29 11:23:32  217464000   4454.08  4598700  2160100000
+2 2026-08-29 11:43:33  217464000   4454.08  4598700  2160100000
+3 2026-08-29 12:10:12  218720000   4454.08  4541900  2170050000
+4 2026-08-29 12:49:05  218720000   4454.08  4541900  2170050000
+DONE
+Running Scrapy...
+2026-08-29 13:00:02 [scrapy.utils.log] INFO: Scrapy 2.17.0 started (bot: web_scraper)
+2026-08-29 13:00:02 [scrapy.utils.log] INFO: Versions:
+{'lxml': '6.1.1',
+ 'libxml2': '2.14.6',
+ 'cssselect': '1.5.0',
+ 'parsel': '1.11.0',
+ 'w3lib': '2.4.1',
+ 'Twisted': '26.4.0',
+ 'Python': '3.13.7 (main, Mar  3 2026, 12:19:54) [GCC 15.2.0]',
+ 'pyOpenSSL': '26.4.0 (OpenSSL 4.0.1 9 Jun 2026)',
+ 'cryptography': '50.0.0',
+ 'Platform': 'Linux-6.17.0-41-generic-x86_64-with-glibc2.42'}
+2026-08-29 13:00:02 [scrapy.crawler] DEBUG: Using AsyncCrawlerProcess
+2026-08-29 13:00:02 [asyncio] DEBUG: Using selector: EpollSelector
+2026-08-29 13:00:02 [scrapy.addons] INFO: Enabled addons:
+[]
+2026-08-29 13:00:02 [scrapy.utils.log] DEBUG: Using reactor: twisted.internet.asyncioreactor.AsyncioSelectorReactor
+2026-08-29 13:00:02 [scrapy.utils.log] DEBUG: Using asyncio event loop: asyncio.unix_events._UnixSelectorEventLoop
+2026-08-29 13:00:02 [scrapy.extensions.telnet] INFO: Telnet Password: 6840f56529828918
+2026-08-29 13:00:02 [scrapy.middleware] INFO: Enabled extensions:
+['scrapy.extensions.corestats.CoreStats',
+ 'scrapy.extensions.logcount.LogCount',
+ 'scrapy.extensions.telnet.TelnetConsole',
+ 'scrapy.extensions.memusage.MemoryUsage',
+ 'scrapy.extensions.logstats.LogStats']
+2026-08-29 13:00:02 [scrapy.crawler] INFO: Overridden settings:
+{'BOT_NAME': 'web_scraper',
+ 'CONCURRENT_REQUESTS_PER_DOMAIN': 1,
+ 'DOWNLOAD_DELAY': 1,
+ 'FEED_EXPORT_ENCODING': 'utf-8',
+ 'NEWSPIDER_MODULE': 'web_scraper.spiders',
+ 'ROBOTSTXT_OBEY': True,
+ 'SPIDER_MODULES': ['web_scraper.spiders']}
+2026-08-29 13:00:02 [scrapy.middleware] INFO: Enabled downloader middlewares:
+['scrapy.downloadermiddlewares.offsite.OffsiteMiddleware',
+ 'scrapy.downloadermiddlewares.robotstxt.RobotsTxtMiddleware',
+ 'scrapy.downloadermiddlewares.httpauth.HttpAuthMiddleware',
+ 'scrapy.downloadermiddlewares.downloadtimeout.DownloadTimeoutMiddleware',
+ 'scrapy.downloadermiddlewares.defaultheaders.DefaultHeadersMiddleware',
+ 'scrapy.downloadermiddlewares.useragent.UserAgentMiddleware',
+ 'scrapy.downloadermiddlewares.retry.RetryMiddleware',
+ 'scrapy.downloadermiddlewares.redirect.MetaRefreshMiddleware',
+ 'scrapy.downloadermiddlewares.httpcompression.HttpCompressionMiddleware',
+ 'scrapy.downloadermiddlewares.redirect.RedirectMiddleware',
+ 'scrapy.downloadermiddlewares.cookies.CookiesMiddleware',
+ 'scrapy.downloadermiddlewares.httpproxy.HttpProxyMiddleware',
+ 'scrapy.downloadermiddlewares.stats.DownloaderStats']
+2026-08-29 13:00:02 [scrapy.middleware] INFO: Enabled spider middlewares:
+['scrapy.spidermiddlewares.start.StartSpiderMiddleware',
+ 'scrapy.spidermiddlewares.httperror.HttpErrorMiddleware',
+ 'scrapy.spidermiddlewares.referer.RefererMiddleware',
+ 'scrapy.spidermiddlewares.urllength.UrlLengthMiddleware',
+ 'scrapy.spidermiddlewares.depth.DepthMiddleware']
+2026-08-29 13:00:02 [scrapy.middleware] INFO: Enabled item pipelines:
+['web_scraper.pipelines.WebScraperPipeline']
+2026-08-29 13:00:02 [py.warnings] WARNING: /home/pc/Documents/web scrapy/web_scraper/.venv/lib/python3.13/site-packages/scrapy/pipelines/__init__.py:43: ScrapyDeprecationWarning: WebScraperPipeline.open_spider() requires a spider argument, this is deprecated and the argument will not be passed in future Scrapy versions. If you need to access the spider instance you can save the crawler instance passed to from_crawler() and use its spider attribute.
+  self._check_mw_method_spider_arg(mw.open_spider)
+
+2026-08-29 13:00:02 [py.warnings] WARNING: /home/pc/Documents/web scrapy/web_scraper/.venv/lib/python3.13/site-packages/scrapy/pipelines/__init__.py:46: ScrapyDeprecationWarning: WebScraperPipeline.close_spider() requires a spider argument, this is deprecated and the argument will not be passed in future Scrapy versions. If you need to access the spider instance you can save the crawler instance passed to from_crawler() and use its spider attribute.
+  self._check_mw_method_spider_arg(mw.close_spider)
+
+2026-08-29 13:00:02 [py.warnings] WARNING: /home/pc/Documents/web scrapy/web_scraper/.venv/lib/python3.13/site-packages/scrapy/pipelines/__init__.py:49: ScrapyDeprecationWarning: WebScraperPipeline.process_item() requires a spider argument, this is deprecated and the argument will not be passed in future Scrapy versions. If you need to access the spider instance you can save the crawler instance passed to from_crawler() and use its spider attribute.
+  self._check_mw_method_spider_arg(mw.process_item)
+
+2026-08-29 13:00:02 [scrapy.core.engine] INFO: Spider opened
+2026-08-29 13:00:02 [scrapy.extensions.logstats] INFO: Crawled 0 pages (at 0 pages/min), scraped 0 items (at 0 items/min)
+2026-08-29 13:00:02 [scrapy.extensions.telnet] INFO: Telnet console listening on 127.0.0.1:6023
+2026-08-29 13:01:02 [scrapy.extensions.logstats] INFO: Crawled 0 pages (at 0 pages/min), scraped 0 items (at 0 items/min)
+2026-08-29 13:02:02 [scrapy.extensions.logstats] INFO: Crawled 0 pages (at 0 pages/min), scraped 0 items (at 0 items/min)
+2026-08-29 13:03:02 [scrapy.extensions.logstats] INFO: Crawled 0 pages (at 0 pages/min), scraped 0 items (at 0 items/min)
+2026-08-29 13:03:02 [scrapy.downloadermiddlewares.retry] DEBUG: Retrying <GET https://call2.tgju.org/robots.txt> (failed 1 times): Getting https://call2.tgju.org/robots.txt took longer than 180.0 seconds.
+2026-08-29 13:04:02 [scrapy.extensions.logstats] INFO: Crawled 0 pages (at 0 pages/min), scraped 0 items (at 0 items/min)
+2026-08-29 13:05:02 [scrapy.extensions.logstats] INFO: Crawled 0 pages (at 0 pages/min), scraped 0 items (at 0 items/min)
+2026-08-29 13:06:02 [scrapy.extensions.logstats] INFO: Crawled 0 pages (at 0 pages/min), scraped 0 items (at 0 items/min)
+2026-08-29 13:06:02 [scrapy.downloadermiddlewares.retry] DEBUG: Retrying <GET https://call2.tgju.org/robots.txt> (failed 2 times): Getting https://call2.tgju.org/robots.txt took longer than 180.0 seconds.
+2026-08-29 13:07:02 [scrapy.extensions.logstats] INFO: Crawled 0 pages (at 0 pages/min), scraped 0 items (at 0 items/min)
+2026-08-29 13:08:02 [scrapy.extensions.logstats] INFO: Crawled 0 pages (at 0 pages/min), scraped 0 items (at 0 items/min)
+2026-08-29 13:09:02 [scrapy.extensions.logstats] INFO: Crawled 0 pages (at 0 pages/min), scraped 0 items (at 0 items/min)
+2026-08-29 13:09:02 [scrapy.downloadermiddlewares.retry] ERROR: Gave up retrying <GET https://call2.tgju.org/robots.txt> (failed 3 times): Getting https://call2.tgju.org/robots.txt took longer than 180.0 seconds.
+2026-08-29 13:09:02 [scrapy.downloadermiddlewares.robotstxt] ERROR: Error downloading <GET https://call2.tgju.org/ajax.json?rev=Yt2ebnCSHS0J1dKrN7wGxtpR3g9t28WVgweDXFYgrGTcBEbsXyxKgBnDEcHq>: Getting https://call2.tgju.org/robots.txt took longer than 180.0 seconds.
+Traceback (most recent call last):
+  File "/home/pc/Documents/web scrapy/web_scraper/.venv/lib/python3.13/site-packages/scrapy/downloadermiddlewares/robotstxt.py", line 100, in robot_parser
+    resp = await self.crawler.engine.download_async(robotsreq)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/pc/Documents/web scrapy/web_scraper/.venv/lib/python3.13/site-packages/scrapy/core/engine.py", line 481, in download_async
+    return await self.download_async(response_or_request)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/pc/Documents/web scrapy/web_scraper/.venv/lib/python3.13/site-packages/scrapy/core/engine.py", line 481, in download_async
+    return await self.download_async(response_or_request)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/pc/Documents/web scrapy/web_scraper/.venv/lib/python3.13/site-packages/scrapy/core/engine.py", line 474, in download_async
+    response_or_request = await maybe_deferred_to_future(
+                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        self._download(request)
+        ^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/home/pc/Documents/web scrapy/web_scraper/.venv/lib/python3.13/site-packages/twisted/internet/defer.py", line 1834, in _inlineCallbacks
+    result = context.run(
+        cast(Failure, result).throwExceptionIntoGenerator, gen
+    )
+  File "/home/pc/Documents/web scrapy/web_scraper/.venv/lib/python3.13/site-packages/twisted/python/failure.py", line 467, in throwExceptionIntoGenerator
+    return g.throw(self.value.with_traceback(self.tb))
+           ~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/pc/Documents/web scrapy/web_scraper/.venv/lib/python3.13/site-packages/scrapy/core/engine.py", line 497, in _download
+    result = yield self.downloader.fetch(request)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/pc/Documents/web scrapy/web_scraper/.venv/lib/python3.13/site-packages/twisted/internet/defer.py", line 1834, in _inlineCallbacks
+    result = context.run(
+        cast(Failure, result).throwExceptionIntoGenerator, gen
+    )
+  File "/home/pc/Documents/web scrapy/web_scraper/.venv/lib/python3.13/site-packages/twisted/python/failure.py", line 467, in throwExceptionIntoGenerator
+    return g.throw(self.value.with_traceback(self.tb))
+           ~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/pc/Documents/web scrapy/web_scraper/.venv/lib/python3.13/site-packages/scrapy/core/downloader/__init__.py", line 131, in fetch
+    result: Response | Request = yield (
+                                 ^^^^^^^
+    ...<3 lines>...
+    )
+    ^
+  File "/home/pc/Documents/web scrapy/web_scraper/.venv/lib/python3.13/site-packages/twisted/internet/defer.py", line 1247, in adapt
+    extracted: _SelfResultT | Failure = result.result()
+                                        ~~~~~~~~~~~~~^^
+  File "/home/pc/Documents/web scrapy/web_scraper/.venv/lib/python3.13/site-packages/scrapy/core/downloader/middleware.py", line 87, in download_async
+    result = await self._process_exception(ex, request)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/pc/Documents/web scrapy/web_scraper/.venv/lib/python3.13/site-packages/scrapy/core/downloader/middleware.py", line 156, in _process_exception
+    raise exception
+  File "/home/pc/Documents/web scrapy/web_scraper/.venv/lib/python3.13/site-packages/scrapy/core/downloader/middleware.py", line 80, in download_async
+    result: Response | Request = await self._process_request(
+                                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        request, download_func
+        ^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/home/pc/Documents/web scrapy/web_scraper/.venv/lib/python3.13/site-packages/scrapy/core/downloader/middleware.py", line 114, in _process_request
+    return await download_func(request)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/pc/Documents/web scrapy/web_scraper/.venv/lib/python3.13/site-packages/scrapy/core/downloader/__init__.py", line 191, in _enqueue_request
+    return await maybe_deferred_to_future(d)  # fired in _wait_for_download()
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/pc/Documents/web scrapy/web_scraper/.venv/lib/python3.13/site-packages/scrapy/core/downloader/__init__.py", line 258, in _wait_for_download
+    response = await self._download(slot, request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/pc/Documents/web scrapy/web_scraper/.venv/lib/python3.13/site-packages/scrapy/core/downloader/__init__.py", line 228, in _download
+    response: Response = await self.handlers.download_request_async(request)
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/pc/Documents/web scrapy/web_scraper/.venv/lib/python3.13/site-packages/scrapy/core/downloader/handlers/__init__.py", line 156, in download_request_async
+    return await handler.download_request(request)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/pc/Documents/web scrapy/web_scraper/.venv/lib/python3.13/site-packages/scrapy/core/downloader/handlers/http11.py", line 130, in download_request
+    return await maybe_deferred_to_future(agent.download_request(request))
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/pc/Documents/web scrapy/web_scraper/.venv/lib/python3.13/site-packages/twisted/internet/defer.py", line 1082, in _runCallbacks
+    current.result = callback(  # type: ignore[misc]
+                     ~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^
+        current.result, *args, **kwargs
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/home/pc/Documents/web scrapy/web_scraper/.venv/lib/python3.13/site-packages/scrapy/core/downloader/handlers/http11.py", line 494, in _cb_timeout
+    raise DownloadTimeoutError(f"Getting {url} took longer than {timeout} seconds.")
+scrapy.exceptions.DownloadTimeoutError: Getting https://call2.tgju.org/robots.txt took longer than 180.0 seconds.
+Running Scrapy...
+2026-08-29 13:10:02 [scrapy.utils.log] INFO: Scrapy 2.17.0 started (bot: web_scraper)
+2026-08-29 13:10:02 [scrapy.utils.log] INFO: Versions:
+{'lxml': '6.1.1',
+ 'libxml2': '2.14.6',
+ 'cssselect': '1.5.0',
+ 'parsel': '1.11.0',
+ 'w3lib': '2.4.1',
+ 'Twisted': '26.4.0',
+ 'Python': '3.13.7 (main, Mar  3 2026, 12:19:54) [GCC 15.2.0]',
+ 'pyOpenSSL': '26.4.0 (OpenSSL 4.0.1 9 Jun 2026)',
+ 'cryptography': '50.0.0',
+ 'Platform': 'Linux-6.17.0-41-generic-x86_64-with-glibc2.42'}
+2026-08-29 13:10:02 [scrapy.crawler] DEBUG: Using AsyncCrawlerProcess
+2026-08-29 13:10:02 [asyncio] DEBUG: Using selector: EpollSelector
+2026-08-29 13:10:02 [scrapy.addons] INFO: Enabled addons:
+[]
+2026-08-29 13:10:02 [scrapy.utils.log] DEBUG: Using reactor: twisted.internet.asyncioreactor.AsyncioSelectorReactor
+2026-08-29 13:10:02 [scrapy.utils.log] DEBUG: Using asyncio event loop: asyncio.unix_events._UnixSelectorEventLoop
+2026-08-29 13:10:02 [scrapy.extensions.telnet] INFO: Telnet Password: 38a4a4f08d262258
+2026-08-29 13:10:02 [scrapy.middleware] INFO: Enabled extensions:
+['scrapy.extensions.corestats.CoreStats',
+ 'scrapy.extensions.logcount.LogCount',
+ 'scrapy.extensions.telnet.TelnetConsole',
+ 'scrapy.extensions.memusage.MemoryUsage',
+ 'scrapy.extensions.logstats.LogStats']
+2026-08-29 13:10:02 [scrapy.crawler] INFO: Overridden settings:
+{'BOT_NAME': 'web_scraper',
+ 'CONCURRENT_REQUESTS_PER_DOMAIN': 1,
+ 'DOWNLOAD_DELAY': 1,
+ 'FEED_EXPORT_ENCODING': 'utf-8',
+ 'NEWSPIDER_MODULE': 'web_scraper.spiders',
+ 'ROBOTSTXT_OBEY': True,
+ 'SPIDER_MODULES': ['web_scraper.spiders']}
+2026-08-29 13:10:02 [scrapy.extensions.logstats] INFO: Crawled 0 pages (at 0 pages/min), scraped 0 items (at 0 items/min)
+2026-08-29 13:10:02 [scrapy.middleware] INFO: Enabled downloader middlewares:
+['scrapy.downloadermiddlewares.offsite.OffsiteMiddleware',
+ 'scrapy.downloadermiddlewares.robotstxt.RobotsTxtMiddleware',
+ 'scrapy.downloadermiddlewares.httpauth.HttpAuthMiddleware',
+ 'scrapy.downloadermiddlewares.downloadtimeout.DownloadTimeoutMiddleware',
+ 'scrapy.downloadermiddlewares.defaultheaders.DefaultHeadersMiddleware',
+ 'scrapy.downloadermiddlewares.useragent.UserAgentMiddleware',
+ 'scrapy.downloadermiddlewares.retry.RetryMiddleware',
+ 'scrapy.downloadermiddlewares.redirect.MetaRefreshMiddleware',
+ 'scrapy.downloadermiddlewares.httpcompression.HttpCompressionMiddleware',
+ 'scrapy.downloadermiddlewares.redirect.RedirectMiddleware',
+ 'scrapy.downloadermiddlewares.cookies.CookiesMiddleware',
+ 'scrapy.downloadermiddlewares.httpproxy.HttpProxyMiddleware',
+ 'scrapy.downloadermiddlewares.stats.DownloaderStats']
+2026-08-29 13:10:02 [scrapy.middleware] INFO: Enabled spider middlewares:
+['scrapy.spidermiddlewares.start.StartSpiderMiddleware',
+ 'scrapy.spidermiddlewares.httperror.HttpErrorMiddleware',
+ 'scrapy.spidermiddlewares.referer.RefererMiddleware',
+ 'scrapy.spidermiddlewares.urllength.UrlLengthMiddleware',
+ 'scrapy.spidermiddlewares.depth.DepthMiddleware']
+2026-08-29 13:10:02 [scrapy.middleware] INFO: Enabled item pipelines:
+['web_scraper.pipelines.WebScraperPipeline']
+2026-08-29 13:10:02 [py.warnings] WARNING: /home/pc/Documents/web scrapy/web_scraper/.venv/lib/python3.13/site-packages/scrapy/pipelines/__init__.py:43: ScrapyDeprecationWarning: WebScraperPipeline.open_spider() requires a spider argument, this is deprecated and the argument will not be passed in future Scrapy versions. If you need to access the spider instance you can save the crawler instance passed to from_crawler() and use its spider attribute.
+  self._check_mw_method_spider_arg(mw.open_spider)
+
+2026-08-29 13:10:02 [py.warnings] WARNING: /home/pc/Documents/web scrapy/web_scraper/.venv/lib/python3.13/site-packages/scrapy/pipelines/__init__.py:46: ScrapyDeprecationWarning: WebScraperPipeline.close_spider() requires a spider argument, this is deprecated and the argument will not be passed in future Scrapy versions. If you need to access the spider instance you can save the crawler instance passed to from_crawler() and use its spider attribute.
+  self._check_mw_method_spider_arg(mw.close_spider)
+
+2026-08-29 13:10:02 [py.warnings] WARNING: /home/pc/Documents/web scrapy/web_scraper/.venv/lib/python3.13/site-packages/scrapy/pipelines/__init__.py:49: ScrapyDeprecationWarning: WebScraperPipeline.process_item() requires a spider argument, this is deprecated and the argument will not be passed in future Scrapy versions. If you need to access the spider instance you can save the crawler instance passed to from_crawler() and use its spider attribute.
+  self._check_mw_method_spider_arg(mw.process_item)
+
+2026-08-29 13:10:02 [scrapy.core.engine] INFO: Spider opened
+2026-08-29 13:10:02 [scrapy.extensions.logstats] INFO: Crawled 0 pages (at 0 pages/min), scraped 0 items (at 0 items/min)
+2026-08-29 13:10:02 [scrapy.extensions.telnet] INFO: Telnet console listening on 127.0.0.1:6024
+2026-08-29 13:10:02 [scrapy.core.engine] DEBUG: Crawled (404) <GET https://call2.tgju.org/robots.txt> (referer: None)
+2026-08-29 13:10:02 [protego._protego] DEBUG: Rule at line 2 without any user agent to enforce it on.
+2026-08-29 13:10:02 [protego._protego] DEBUG: Rule at line 6 without any user agent to enforce it on.
+2026-08-29 13:10:04 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://call2.tgju.org/ajax.json?rev=Yt2ebnCSHS0J1dKrN7wGxtpR3g9t28WVgweDXFYgrGTcBEbsXyxKgBnDEcHq> (referer: None)
+2026-08-29 13:10:04 [scrapy.core.scraper] DEBUG: Scraped from <200 https://call2.tgju.org/ajax.json?rev=Yt2ebnCSHS0J1dKrN7wGxtpR3g9t28WVgweDXFYgrGTcBEbsXyxKgBnDEcHq>
+{'coin': '2,170,050,000',
+ 'gold_18k': '218,720,000',
+ 'ons_gold': '4,454.08',
+ 'silver': '4,541,900',
+ 'timestamp': '2026-08-29  13:10:04'}
+2026-08-29 13:10:04 [scrapy.core.engine] INFO: Closing spider (finished)
+2026-08-29 13:10:04 [scrapy.statscollectors] INFO: Dumping Scrapy stats:
+{'downloader/request_bytes': 514,
+ 'downloader/request_count': 2,
+ 'downloader/request_method_count/GET': 2,
+ 'downloader/response_bytes': 25122,
+ 'downloader/response_count': 2,
+ 'downloader/response_status_count/200': 1,
+ 'downloader/response_status_count/404': 1,
+ 'elapsed_time_seconds': 1.9897307219998766,
+ 'finish_reason': 'finished',
+ 'finish_time': datetime.datetime(2026, 8, 29, 9, 40, 4, 309061, tzinfo=datetime.timezone.utc),
+ 'httpcompression/response_bytes': 147909,
+ 'httpcompression/response_count': 2,
+ 'item_scraped_count': 1,
+ 'items_per_minute': 60.0,
+ 'log_count/DEBUG': 5,
+ 'log_count/INFO': 3,
+ 'memusage/max': 71397376,
+ 'memusage/startup': 71397376,
+ 'response_received_count': 2,
+ 'responses_per_minute': 120.0,
+ 'robotstxt/request_count': 1,
+ 'robotstxt/response_count': 1,
+ 'robotstxt/response_status_count/404': 1,
+ 'scheduler/dequeued': 1,
+ 'scheduler/dequeued/memory': 1,
+ 'scheduler/enqueued': 1,
+ 'scheduler/enqueued/memory': 1,
+ 'start_time': datetime.datetime(2026, 8, 29, 9, 40, 2, 319326, tzinfo=datetime.timezone.utc)}
+2026-08-29 13:10:04 [scrapy.core.engine] INFO: Spider closed (finished)
+Running cleaning...
+<class 'pandas.DataFrame'>
+RangeIndex: 7 entries, 0 to 6
+Data columns (total 5 columns):
+ #   Column     Non-Null Count  Dtype
+---  ------     --------------  -----
+ 0   timestamp  7 non-null      str  
+ 1   gold_18k   7 non-null      str  
+ 2   ons_gold   7 non-null      str  
+ 3   silver     7 non-null      str  
+ 4   coin       7 non-null      str  
+dtypes: str(5)
+memory usage: 412.0 bytes
+              timestamp     gold_18k  ons_gold     silver           coin
+0  2026-08-29  11:08:52  217,464,000  4,454.08  4,598,700  2,160,100,000
+1  2026-08-29  11:23:32  217,464,000  4,454.08  4,598,700  2,160,100,000
+2  2026-08-29  11:43:33  217,464,000  4,454.08  4,598,700  2,160,100,000
+3  2026-08-29  12:10:12  218,720,000  4,454.08  4,541,900  2,170,050,000
+4  2026-08-29  12:49:05  218,720,000  4,454.08  4,541,900  2,170,050,000
+<class 'pandas.DataFrame'>
+RangeIndex: 7 entries, 0 to 6
+Data columns (total 5 columns):
+ #   Column     Non-Null Count  Dtype  
+---  ------     --------------  -----  
+ 0   timestamp  7 non-null      str    
+ 1   gold_18k   7 non-null      str    
+ 2   ons_gold   7 non-null      float64
+ 3   silver     7 non-null      str    
+ 4   coin       7 non-null      str    
+dtypes: float64(1), str(4)
+memory usage: 412.0 bytes
+None
+<class 'pandas.DataFrame'>
+RangeIndex: 7 entries, 0 to 6
+Data columns (total 5 columns):
+ #   Column     Non-Null Count  Dtype  
+---  ------     --------------  -----  
+ 0   timestamp  7 non-null      str    
+ 1   gold_18k   7 non-null      str    
+ 2   ons_gold   7 non-null      float64
+ 3   silver     7 non-null      int64  
+ 4   coin       7 non-null      str    
+dtypes: float64(1), int64(1), str(3)
+memory usage: 412.0 bytes
+None
+<class 'pandas.DataFrame'>
+RangeIndex: 7 entries, 0 to 6
+Data columns (total 5 columns):
+ #   Column     Non-Null Count  Dtype  
+---  ------     --------------  -----  
+ 0   timestamp  7 non-null      str    
+ 1   gold_18k   7 non-null      str    
+ 2   ons_gold   7 non-null      float64
+ 3   silver     7 non-null      int64  
+ 4   coin       7 non-null      int64  
+dtypes: float64(1), int64(2), str(2)
+memory usage: 412.0 bytes
+None
+<class 'pandas.DataFrame'>
+RangeIndex: 7 entries, 0 to 6
+Data columns (total 5 columns):
+ #   Column     Non-Null Count  Dtype  
+---  ------     --------------  -----  
+ 0   timestamp  7 non-null      str    
+ 1   gold_18k   7 non-null      int64  
+ 2   ons_gold   7 non-null      float64
+ 3   silver     7 non-null      int64  
+ 4   coin       7 non-null      int64  
+dtypes: float64(1), int64(3), str(1)
+memory usage: 412.0 bytes
+None
+<class 'pandas.DataFrame'>
+RangeIndex: 7 entries, 0 to 6
+Data columns (total 5 columns):
+ #   Column     Non-Null Count  Dtype         
+---  ------     --------------  -----         
+ 0   timestamp  7 non-null      datetime64[us]
+ 1   gold_18k   7 non-null      int64         
+ 2   ons_gold   7 non-null      float64       
+ 3   silver     7 non-null      int64         
+ 4   coin       7 non-null      int64         
+dtypes: datetime64[us](1), float64(1), int64(3)
+memory usage: 412.0 bytes
+            timestamp   gold_18k  ons_gold   silver        coin
+0 2026-08-29 11:08:52  217464000   4454.08  4598700  2160100000
+1 2026-08-29 11:23:32  217464000   4454.08  4598700  2160100000
+2 2026-08-29 11:43:33  217464000   4454.08  4598700  2160100000
+3 2026-08-29 12:10:12  218720000   4454.08  4541900  2170050000
+4 2026-08-29 12:49:05  218720000   4454.08  4541900  2170050000
+DONE
+2026-08-29 13:11:02 [scrapy.extensions.logstats] INFO: Crawled 0 pages (at 0 pages/min), scraped 0 items (at 0 items/min)
+2026-08-29 13:12:02 [scrapy.extensions.logstats] INFO: Crawled 0 pages (at 0 pages/min), scraped 0 items (at 0 items/min)
+2026-08-29 13:12:03 [scrapy.downloadermiddlewares.retry] DEBUG: Retrying <GET https://call2.tgju.org/ajax.json?rev=Yt2ebnCSHS0J1dKrN7wGxtpR3g9t28WVgweDXFYgrGTcBEbsXyxKgBnDEcHq> (failed 1 times): Getting https://call2.tgju.org/ajax.json?rev=Yt2ebnCSHS0J1dKrN7wGxtpR3g9t28WVgweDXFYgrGTcBEbsXyxKgBnDEcHq took longer than 180.0 seconds.
+2026-08-29 13:13:02 [scrapy.extensions.logstats] INFO: Crawled 0 pages (at 0 pages/min), scraped 0 items (at 0 items/min)
+2026-08-29 13:14:02 [scrapy.extensions.logstats] INFO: Crawled 0 pages (at 0 pages/min), scraped 0 items (at 0 items/min)
+2026-08-29 13:15:02 [scrapy.extensions.logstats] INFO: Crawled 0 pages (at 0 pages/min), scraped 0 items (at 0 items/min)
+2026-08-29 13:15:03 [scrapy.downloadermiddlewares.retry] DEBUG: Retrying <GET https://call2.tgju.org/ajax.json?rev=Yt2ebnCSHS0J1dKrN7wGxtpR3g9t28WVgweDXFYgrGTcBEbsXyxKgBnDEcHq> (failed 2 times): Getting https://call2.tgju.org/ajax.json?rev=Yt2ebnCSHS0J1dKrN7wGxtpR3g9t28WVgweDXFYgrGTcBEbsXyxKgBnDEcHq took longer than 180.0 seconds.
+2026-08-29 13:16:02 [scrapy.extensions.logstats] INFO: Crawled 0 pages (at 0 pages/min), scraped 0 items (at 0 items/min)
+2026-08-29 13:17:02 [scrapy.extensions.logstats] INFO: Crawled 0 pages (at 0 pages/min), scraped 0 items (at 0 items/min)
+2026-08-29 13:18:02 [scrapy.extensions.logstats] INFO: Crawled 0 pages (at 0 pages/min), scraped 0 items (at 0 items/min)
+2026-08-29 13:18:03 [scrapy.downloadermiddlewares.retry] ERROR: Gave up retrying <GET https://call2.tgju.org/ajax.json?rev=Yt2ebnCSHS0J1dKrN7wGxtpR3g9t28WVgweDXFYgrGTcBEbsXyxKgBnDEcHq> (failed 3 times): Getting https://call2.tgju.org/ajax.json?rev=Yt2ebnCSHS0J1dKrN7wGxtpR3g9t28WVgweDXFYgrGTcBEbsXyxKgBnDEcHq took longer than 180.0 seconds.
+2026-08-29 13:18:03 [scrapy.core.scraper] ERROR: Error downloading <GET https://call2.tgju.org/ajax.json?rev=Yt2ebnCSHS0J1dKrN7wGxtpR3g9t28WVgweDXFYgrGTcBEbsXyxKgBnDEcHq>
+Traceback (most recent call last):
+  File "/home/pc/Documents/web scrapy/web_scraper/.venv/lib/python3.13/site-packages/twisted/internet/defer.py", line 1834, in _inlineCallbacks
+    result = context.run(
+        cast(Failure, result).throwExceptionIntoGenerator, gen
+    )
+  File "/home/pc/Documents/web scrapy/web_scraper/.venv/lib/python3.13/site-packages/twisted/python/failure.py", line 467, in throwExceptionIntoGenerator
+    return g.throw(self.value.with_traceback(self.tb))
+           ~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/pc/Documents/web scrapy/web_scraper/.venv/lib/python3.13/site-packages/scrapy/core/engine.py", line 497, in _download
+    result = yield self.downloader.fetch(request)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/pc/Documents/web scrapy/web_scraper/.venv/lib/python3.13/site-packages/twisted/internet/defer.py", line 1834, in _inlineCallbacks
+    result = context.run(
+        cast(Failure, result).throwExceptionIntoGenerator, gen
+    )
+  File "/home/pc/Documents/web scrapy/web_scraper/.venv/lib/python3.13/site-packages/twisted/python/failure.py", line 467, in throwExceptionIntoGenerator
+    return g.throw(self.value.with_traceback(self.tb))
+           ~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/pc/Documents/web scrapy/web_scraper/.venv/lib/python3.13/site-packages/scrapy/core/downloader/__init__.py", line 131, in fetch
+    result: Response | Request = yield (
+                                 ^^^^^^^
+    ...<3 lines>...
+    )
+    ^
+  File "/home/pc/Documents/web scrapy/web_scraper/.venv/lib/python3.13/site-packages/twisted/internet/defer.py", line 1247, in adapt
+    extracted: _SelfResultT | Failure = result.result()
+                                        ~~~~~~~~~~~~~^^
+  File "/home/pc/Documents/web scrapy/web_scraper/.venv/lib/python3.13/site-packages/scrapy/core/downloader/middleware.py", line 87, in download_async
+    result = await self._process_exception(ex, request)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/pc/Documents/web scrapy/web_scraper/.venv/lib/python3.13/site-packages/scrapy/core/downloader/middleware.py", line 156, in _process_exception
+    raise exception
+  File "/home/pc/Documents/web scrapy/web_scraper/.venv/lib/python3.13/site-packages/scrapy/core/downloader/middleware.py", line 80, in download_async
+    result: Response | Request = await self._process_request(
+                                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        request, download_func
+        ^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/home/pc/Documents/web scrapy/web_scraper/.venv/lib/python3.13/site-packages/scrapy/core/downloader/middleware.py", line 114, in _process_request
+    return await download_func(request)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/pc/Documents/web scrapy/web_scraper/.venv/lib/python3.13/site-packages/scrapy/core/downloader/__init__.py", line 191, in _enqueue_request
+    return await maybe_deferred_to_future(d)  # fired in _wait_for_download()
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/pc/Documents/web scrapy/web_scraper/.venv/lib/python3.13/site-packages/scrapy/core/downloader/__init__.py", line 258, in _wait_for_download
+    response = await self._download(slot, request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/pc/Documents/web scrapy/web_scraper/.venv/lib/python3.13/site-packages/scrapy/core/downloader/__init__.py", line 228, in _download
+    response: Response = await self.handlers.download_request_async(request)
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/pc/Documents/web scrapy/web_scraper/.venv/lib/python3.13/site-packages/scrapy/core/downloader/handlers/__init__.py", line 156, in download_request_async
+    return await handler.download_request(request)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/pc/Documents/web scrapy/web_scraper/.venv/lib/python3.13/site-packages/scrapy/core/downloader/handlers/http11.py", line 130, in download_request
+    return await maybe_deferred_to_future(agent.download_request(request))
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/pc/Documents/web scrapy/web_scraper/.venv/lib/python3.13/site-packages/twisted/internet/defer.py", line 1082, in _runCallbacks
+    current.result = callback(  # type: ignore[misc]
+                     ~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^
+        current.result, *args, **kwargs
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/home/pc/Documents/web scrapy/web_scraper/.venv/lib/python3.13/site-packages/scrapy/core/downloader/handlers/http11.py", line 494, in _cb_timeout
+    raise DownloadTimeoutError(f"Getting {url} took longer than {timeout} seconds.")
+scrapy.exceptions.DownloadTimeoutError: Getting https://call2.tgju.org/ajax.json?rev=Yt2ebnCSHS0J1dKrN7wGxtpR3g9t28WVgweDXFYgrGTcBEbsXyxKgBnDEcHq took longer than 180.0 seconds.
+2026-08-29 13:18:03 [scrapy.core.engine] INFO: Closing spider (finished)
+2026-08-29 13:18:03 [scrapy.statscollectors] INFO: Dumping Scrapy stats:
+{'downloader/exception_count': 6,
+ 'downloader/exception_type_count/scrapy.exceptions.DownloadTimeoutError': 6,
+ 'downloader/request_bytes': 1542,
+ 'downloader/request_count': 6,
+ 'downloader/request_method_count/GET': 6,
+ 'elapsed_time_seconds': 1081.3750168759998,
+ 'finish_reason': 'finished',
+ 'finish_time': datetime.datetime(2026, 8, 29, 9, 48, 3, 621458, tzinfo=datetime.timezone.utc),
+ 'items_per_minute': 0.0,
+ 'log_count/DEBUG': 4,
+ 'log_count/ERROR': 4,
+ 'log_count/INFO': 21,
+ 'memusage/max': 73191424,
+ 'memusage/startup': 71688192,
+ 'responses_per_minute': 0.0,
+ 'retry/count': 4,
+ 'retry/max_reached': 2,
+ 'retry/reason_count/scrapy.exceptions.DownloadTimeoutError': 4,
+ "robotstxt/exception_count/<class 'scrapy.exceptions.DownloadTimeoutError'>": 1,
+ 'robotstxt/request_count': 1,
+ 'scheduler/dequeued': 3,
+ 'scheduler/dequeued/memory': 3,
+ 'scheduler/enqueued': 3,
+ 'scheduler/enqueued/memory': 3,
+ 'start_time': datetime.datetime(2026, 8, 29, 9, 30, 2, 246442, tzinfo=datetime.timezone.utc)}
+2026-08-29 13:18:03 [scrapy.core.engine] INFO: Spider closed (finished)
+Running cleaning...
+<class 'pandas.DataFrame'>
+RangeIndex: 7 entries, 0 to 6
+Data columns (total 5 columns):
+ #   Column     Non-Null Count  Dtype
+---  ------     --------------  -----
+ 0   timestamp  7 non-null      str  
+ 1   gold_18k   7 non-null      str  
+ 2   ons_gold   7 non-null      str  
+ 3   silver     7 non-null      str  
+ 4   coin       7 non-null      str  
+dtypes: str(5)
+memory usage: 412.0 bytes
+              timestamp     gold_18k  ons_gold     silver           coin
+0  2026-08-29  11:08:52  217,464,000  4,454.08  4,598,700  2,160,100,000
+1  2026-08-29  11:23:32  217,464,000  4,454.08  4,598,700  2,160,100,000
+2  2026-08-29  11:43:33  217,464,000  4,454.08  4,598,700  2,160,100,000
+3  2026-08-29  12:10:12  218,720,000  4,454.08  4,541,900  2,170,050,000
+4  2026-08-29  12:49:05  218,720,000  4,454.08  4,541,900  2,170,050,000
+<class 'pandas.DataFrame'>
+RangeIndex: 7 entries, 0 to 6
+Data columns (total 5 columns):
+ #   Column     Non-Null Count  Dtype  
+---  ------     --------------  -----  
+ 0   timestamp  7 non-null      str    
+ 1   gold_18k   7 non-null      str    
+ 2   ons_gold   7 non-null      float64
+ 3   silver     7 non-null      str    
+ 4   coin       7 non-null      str    
+dtypes: float64(1), str(4)
+memory usage: 412.0 bytes
+None
+<class 'pandas.DataFrame'>
+RangeIndex: 7 entries, 0 to 6
+Data columns (total 5 columns):
+ #   Column     Non-Null Count  Dtype  
+---  ------     --------------  -----  
+ 0   timestamp  7 non-null      str    
+ 1   gold_18k   7 non-null      str    
+ 2   ons_gold   7 non-null      float64
+ 3   silver     7 non-null      int64  
+ 4   coin       7 non-null      str    
+dtypes: float64(1), int64(1), str(3)
+memory usage: 412.0 bytes
+None
+<class 'pandas.DataFrame'>
+RangeIndex: 7 entries, 0 to 6
+Data columns (total 5 columns):
+ #   Column     Non-Null Count  Dtype  
+---  ------     --------------  -----  
+ 0   timestamp  7 non-null      str    
+ 1   gold_18k   7 non-null      str    
+ 2   ons_gold   7 non-null      float64
+ 3   silver     7 non-null      int64  
+ 4   coin       7 non-null      int64  
+dtypes: float64(1), int64(2), str(2)
+memory usage: 412.0 bytes
+None
+<class 'pandas.DataFrame'>
+RangeIndex: 7 entries, 0 to 6
+Data columns (total 5 columns):
+ #   Column     Non-Null Count  Dtype  
+---  ------     --------------  -----  
+ 0   timestamp  7 non-null      str    
+ 1   gold_18k   7 non-null      int64  
+ 2   ons_gold   7 non-null      float64
+ 3   silver     7 non-null      int64  
+ 4   coin       7 non-null      int64  
+dtypes: float64(1), int64(3), str(1)
+memory usage: 412.0 bytes
+None
+<class 'pandas.DataFrame'>
+RangeIndex: 7 entries, 0 to 6
+Data columns (total 5 columns):
+ #   Column     Non-Null Count  Dtype         
+---  ------     --------------  -----         
+ 0   timestamp  7 non-null      datetime64[us]
+ 1   gold_18k   7 non-null      int64         
+ 2   ons_gold   7 non-null      float64       
+ 3   silver     7 non-null      int64         
+ 4   coin       7 non-null      int64         
+dtypes: datetime64[us](1), float64(1), int64(3)
+memory usage: 412.0 bytes
+            timestamp   gold_18k  ons_gold   silver        coin
+0 2026-08-29 11:08:52  217464000   4454.08  4598700  2160100000
+1 2026-08-29 11:23:32  217464000   4454.08  4598700  2160100000
+2 2026-08-29 11:43:33  217464000   4454.08  4598700  2160100000
+3 2026-08-29 12:10:12  218720000   4454.08  4541900  2170050000
+4 2026-08-29 12:49:05  218720000   4454.08  4541900  2170050000
+DONE
+Running Scrapy...
+2026-08-29 13:20:01 [scrapy.utils.log] INFO: Scrapy 2.17.0 started (bot: web_scraper)
+2026-08-29 13:20:01 [scrapy.utils.log] INFO: Versions:
+{'lxml': '6.1.1',
+ 'libxml2': '2.14.6',
+ 'cssselect': '1.5.0',
+ 'parsel': '1.11.0',
+ 'w3lib': '2.4.1',
+ 'Twisted': '26.4.0',
+ 'Python': '3.13.7 (main, Mar  3 2026, 12:19:54) [GCC 15.2.0]',
+ 'pyOpenSSL': '26.4.0 (OpenSSL 4.0.1 9 Jun 2026)',
+ 'cryptography': '50.0.0',
+ 'Platform': 'Linux-6.17.0-41-generic-x86_64-with-glibc2.42'}
+2026-08-29 13:20:01 [scrapy.crawler] DEBUG: Using AsyncCrawlerProcess
+2026-08-29 13:20:01 [asyncio] DEBUG: Using selector: EpollSelector
+2026-08-29 13:20:01 [scrapy.addons] INFO: Enabled addons:
+[]
+2026-08-29 13:20:01 [scrapy.utils.log] DEBUG: Using reactor: twisted.internet.asyncioreactor.AsyncioSelectorReactor
+2026-08-29 13:20:01 [scrapy.utils.log] DEBUG: Using asyncio event loop: asyncio.unix_events._UnixSelectorEventLoop
+2026-08-29 13:20:01 [scrapy.extensions.telnet] INFO: Telnet Password: 3b1038d4f4cd8148
+2026-08-29 13:20:01 [scrapy.middleware] INFO: Enabled extensions:
+['scrapy.extensions.corestats.CoreStats',
+ 'scrapy.extensions.logcount.LogCount',
+ 'scrapy.extensions.telnet.TelnetConsole',
+ 'scrapy.extensions.memusage.MemoryUsage',
+ 'scrapy.extensions.logstats.LogStats']
+2026-08-29 13:20:01 [scrapy.crawler] INFO: Overridden settings:
+{'BOT_NAME': 'web_scraper',
+ 'CONCURRENT_REQUESTS_PER_DOMAIN': 1,
+ 'DOWNLOAD_DELAY': 1,
+ 'FEED_EXPORT_ENCODING': 'utf-8',
+ 'NEWSPIDER_MODULE': 'web_scraper.spiders',
+ 'ROBOTSTXT_OBEY': True,
+ 'SPIDER_MODULES': ['web_scraper.spiders']}
+2026-08-29 13:20:01 [scrapy.middleware] INFO: Enabled downloader middlewares:
+['scrapy.downloadermiddlewares.offsite.OffsiteMiddleware',
+ 'scrapy.downloadermiddlewares.robotstxt.RobotsTxtMiddleware',
+ 'scrapy.downloadermiddlewares.httpauth.HttpAuthMiddleware',
+ 'scrapy.downloadermiddlewares.downloadtimeout.DownloadTimeoutMiddleware',
+ 'scrapy.downloadermiddlewares.defaultheaders.DefaultHeadersMiddleware',
+ 'scrapy.downloadermiddlewares.useragent.UserAgentMiddleware',
+ 'scrapy.downloadermiddlewares.retry.RetryMiddleware',
+ 'scrapy.downloadermiddlewares.redirect.MetaRefreshMiddleware',
+ 'scrapy.downloadermiddlewares.httpcompression.HttpCompressionMiddleware',
+ 'scrapy.downloadermiddlewares.redirect.RedirectMiddleware',
+ 'scrapy.downloadermiddlewares.cookies.CookiesMiddleware',
+ 'scrapy.downloadermiddlewares.httpproxy.HttpProxyMiddleware',
+ 'scrapy.downloadermiddlewares.stats.DownloaderStats']
+2026-08-29 13:20:01 [scrapy.middleware] INFO: Enabled spider middlewares:
+['scrapy.spidermiddlewares.start.StartSpiderMiddleware',
+ 'scrapy.spidermiddlewares.httperror.HttpErrorMiddleware',
+ 'scrapy.spidermiddlewares.referer.RefererMiddleware',
+ 'scrapy.spidermiddlewares.urllength.UrlLengthMiddleware',
+ 'scrapy.spidermiddlewares.depth.DepthMiddleware']
+2026-08-29 13:20:01 [scrapy.middleware] INFO: Enabled item pipelines:
+['web_scraper.pipelines.WebScraperPipeline']
+2026-08-29 13:20:01 [py.warnings] WARNING: /home/pc/Documents/web scrapy/web_scraper/.venv/lib/python3.13/site-packages/scrapy/pipelines/__init__.py:43: ScrapyDeprecationWarning: WebScraperPipeline.open_spider() requires a spider argument, this is deprecated and the argument will not be passed in future Scrapy versions. If you need to access the spider instance you can save the crawler instance passed to from_crawler() and use its spider attribute.
+  self._check_mw_method_spider_arg(mw.open_spider)
+
+2026-08-29 13:20:01 [py.warnings] WARNING: /home/pc/Documents/web scrapy/web_scraper/.venv/lib/python3.13/site-packages/scrapy/pipelines/__init__.py:46: ScrapyDeprecationWarning: WebScraperPipeline.close_spider() requires a spider argument, this is deprecated and the argument will not be passed in future Scrapy versions. If you need to access the spider instance you can save the crawler instance passed to from_crawler() and use its spider attribute.
+  self._check_mw_method_spider_arg(mw.close_spider)
+
+2026-08-29 13:20:01 [py.warnings] WARNING: /home/pc/Documents/web scrapy/web_scraper/.venv/lib/python3.13/site-packages/scrapy/pipelines/__init__.py:49: ScrapyDeprecationWarning: WebScraperPipeline.process_item() requires a spider argument, this is deprecated and the argument will not be passed in future Scrapy versions. If you need to access the spider instance you can save the crawler instance passed to from_crawler() and use its spider attribute.
+  self._check_mw_method_spider_arg(mw.process_item)
+
+2026-08-29 13:20:01 [scrapy.core.engine] INFO: Spider opened
+2026-08-29 13:20:01 [scrapy.extensions.logstats] INFO: Crawled 0 pages (at 0 pages/min), scraped 0 items (at 0 items/min)
+2026-08-29 13:20:01 [scrapy.extensions.telnet] INFO: Telnet console listening on 127.0.0.1:6023
+2026-08-29 13:20:02 [scrapy.core.engine] DEBUG: Crawled (404) <GET https://call2.tgju.org/robots.txt> (referer: None)
+2026-08-29 13:20:02 [protego._protego] DEBUG: Rule at line 2 without any user agent to enforce it on.
+2026-08-29 13:20:02 [protego._protego] DEBUG: Rule at line 6 without any user agent to enforce it on.
+2026-08-29 13:20:03 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://call2.tgju.org/ajax.json?rev=Yt2ebnCSHS0J1dKrN7wGxtpR3g9t28WVgweDXFYgrGTcBEbsXyxKgBnDEcHq> (referer: None)
+2026-08-29 13:20:03 [scrapy.core.scraper] DEBUG: Scraped from <200 https://call2.tgju.org/ajax.json?rev=Yt2ebnCSHS0J1dKrN7wGxtpR3g9t28WVgweDXFYgrGTcBEbsXyxKgBnDEcHq>
+{'coin': '2,180,100,000',
+ 'gold_18k': '218,189,000',
+ 'ons_gold': '4,454.08',
+ 'silver': '4,593,600',
+ 'timestamp': '2026-08-29  13:20:03'}
+2026-08-29 13:20:03 [scrapy.core.engine] INFO: Closing spider (finished)
+2026-08-29 13:20:03 [scrapy.statscollectors] INFO: Dumping Scrapy stats:
+{'downloader/request_bytes': 514,
+ 'downloader/request_count': 2,
+ 'downloader/request_method_count/GET': 2,
+ 'downloader/response_bytes': 26045,
+ 'downloader/response_count': 2,
+ 'downloader/response_status_count/200': 1,
+ 'downloader/response_status_count/404': 1,
+ 'elapsed_time_seconds': 1.8245646369996393,
+ 'finish_reason': 'finished',
+ 'finish_time': datetime.datetime(2026, 8, 29, 9, 50, 3, 691079, tzinfo=datetime.timezone.utc),
+ 'httpcompression/response_bytes': 148230,
+ 'httpcompression/response_count': 2,
+ 'item_scraped_count': 1,
+ 'items_per_minute': 60.0,
+ 'log_count/DEBUG': 5,
+ 'log_count/INFO': 3,
+ 'memusage/max': 71286784,
+ 'memusage/startup': 71286784,
+ 'response_received_count': 2,
+ 'responses_per_minute': 120.0,
+ 'robotstxt/request_count': 1,
+ 'robotstxt/response_count': 1,
+ 'robotstxt/response_status_count/404': 1,
+ 'scheduler/dequeued': 1,
+ 'scheduler/dequeued/memory': 1,
+ 'scheduler/enqueued': 1,
+ 'scheduler/enqueued/memory': 1,
+ 'start_time': datetime.datetime(2026, 8, 29, 9, 50, 1, 866513, tzinfo=datetime.timezone.utc)}
+2026-08-29 13:20:03 [scrapy.core.engine] INFO: Spider closed (finished)
+Running cleaning...
+<class 'pandas.DataFrame'>
+RangeIndex: 8 entries, 0 to 7
+Data columns (total 5 columns):
+ #   Column     Non-Null Count  Dtype
+---  ------     --------------  -----
+ 0   timestamp  8 non-null      str  
+ 1   gold_18k   8 non-null      str  
+ 2   ons_gold   8 non-null      str  
+ 3   silver     8 non-null      str  
+ 4   coin       8 non-null      str  
+dtypes: str(5)
+memory usage: 452.0 bytes
+              timestamp     gold_18k  ons_gold     silver           coin
+0  2026-08-29  11:08:52  217,464,000  4,454.08  4,598,700  2,160,100,000
+1  2026-08-29  11:23:32  217,464,000  4,454.08  4,598,700  2,160,100,000
+2  2026-08-29  11:43:33  217,464,000  4,454.08  4,598,700  2,160,100,000
+3  2026-08-29  12:10:12  218,720,000  4,454.08  4,541,900  2,170,050,000
+4  2026-08-29  12:49:05  218,720,000  4,454.08  4,541,900  2,170,050,000
+<class 'pandas.DataFrame'>
+RangeIndex: 8 entries, 0 to 7
+Data columns (total 5 columns):
+ #   Column     Non-Null Count  Dtype  
+---  ------     --------------  -----  
+ 0   timestamp  8 non-null      str    
+ 1   gold_18k   8 non-null      str    
+ 2   ons_gold   8 non-null      float64
+ 3   silver     8 non-null      str    
+ 4   coin       8 non-null      str    
+dtypes: float64(1), str(4)
+memory usage: 452.0 bytes
+None
+<class 'pandas.DataFrame'>
+RangeIndex: 8 entries, 0 to 7
+Data columns (total 5 columns):
+ #   Column     Non-Null Count  Dtype  
+---  ------     --------------  -----  
+ 0   timestamp  8 non-null      str    
+ 1   gold_18k   8 non-null      str    
+ 2   ons_gold   8 non-null      float64
+ 3   silver     8 non-null      int64  
+ 4   coin       8 non-null      str    
+dtypes: float64(1), int64(1), str(3)
+memory usage: 452.0 bytes
+None
+<class 'pandas.DataFrame'>
+RangeIndex: 8 entries, 0 to 7
+Data columns (total 5 columns):
+ #   Column     Non-Null Count  Dtype  
+---  ------     --------------  -----  
+ 0   timestamp  8 non-null      str    
+ 1   gold_18k   8 non-null      str    
+ 2   ons_gold   8 non-null      float64
+ 3   silver     8 non-null      int64  
+ 4   coin       8 non-null      int64  
+dtypes: float64(1), int64(2), str(2)
+memory usage: 452.0 bytes
+None
+<class 'pandas.DataFrame'>
+RangeIndex: 8 entries, 0 to 7
+Data columns (total 5 columns):
+ #   Column     Non-Null Count  Dtype  
+---  ------     --------------  -----  
+ 0   timestamp  8 non-null      str    
+ 1   gold_18k   8 non-null      int64  
+ 2   ons_gold   8 non-null      float64
+ 3   silver     8 non-null      int64  
+ 4   coin       8 non-null      int64  
+dtypes: float64(1), int64(3), str(1)
+memory usage: 452.0 bytes
+None
+<class 'pandas.DataFrame'>
+RangeIndex: 8 entries, 0 to 7
+Data columns (total 5 columns):
+ #   Column     Non-Null Count  Dtype         
+---  ------     --------------  -----         
+ 0   timestamp  8 non-null      datetime64[us]
+ 1   gold_18k   8 non-null      int64         
+ 2   ons_gold   8 non-null      float64       
+ 3   silver     8 non-null      int64         
+ 4   coin       8 non-null      int64         
+dtypes: datetime64[us](1), float64(1), int64(3)
+memory usage: 452.0 bytes
+            timestamp   gold_18k  ons_gold   silver        coin
+0 2026-08-29 11:08:52  217464000   4454.08  4598700  2160100000
+1 2026-08-29 11:23:32  217464000   4454.08  4598700  2160100000
+2 2026-08-29 11:43:33  217464000   4454.08  4598700  2160100000
+3 2026-08-29 12:10:12  218720000   4454.08  4541900  2170050000
+4 2026-08-29 12:49:05  218720000   4454.08  4541900  2170050000
+DONE
