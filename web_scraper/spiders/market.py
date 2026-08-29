@@ -14,7 +14,7 @@ class marketspider(scrapy.Spider):
 
         current=data['current']
         
-        gold_18k=current['tgju_gold_irg18']
+        gold_18k=current['geram18']
         gold_18k_p=gold_18k['p']
 
         ons_gold=current['ons']

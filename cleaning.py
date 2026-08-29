@@ -5,7 +5,7 @@ base_dir=Path(__file__).resolve().parent
 data=pd.read_csv(base_dir/"data/raw"/"price.csv")
 data.info()
 print(data.head())
-price_columns = ["ons_gold","silver","coin"]
+price_columns = ["ons_gold","silver","coin","gold_18k"]
 
 for column in price_columns:
     data[column]=data[column].str.replace(',','',regex=False)
