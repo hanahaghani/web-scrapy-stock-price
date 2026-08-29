@@ -5,6 +5,7 @@ from datetime import datetime
 class marketspider(scrapy.Spider):
     name='market'
     allowed_domains=["tgju.org"]
+    #api url
     start_urls=['https://call2.tgju.org/ajax.json?rev=Yt2ebnCSHS0J1dKrN7wGxtpR3g9t28WVgweDXFYgrGTcBEbsXyxKgBnDEcHq']
 
     def parse(self,response):
