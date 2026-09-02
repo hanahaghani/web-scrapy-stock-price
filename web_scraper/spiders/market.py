@@ -1,38 +1,42 @@
 import scrapy
 from web_scraper.items import marketitem
 from datetime import datetime
+import requests
+import asyncio
+
 
 class marketspider(scrapy.Spider):
-    name='market'
-    allowed_domains=["tgju.org"]
-    #api url
-    start_urls=['https://call2.tgju.org/ajax.json?rev=Yt2ebnCSHS0J1dKrN7wGxtpR3g9t28WVgweDXFYgrGTcBEbsXyxKgBnDEcHq']
+    name = 'market'
+    allowed_domains = ["tgju.org"]
 
-    def parse(self,response):
+    start_urls = [
+        'https://call4.tgju.org/ajax.json?rev=XjM9klM7SZvEdbsegxr3y3K3i3fZyi79VnB3ACfQhUTFLoakHIDorJz3nfT4'
+    ]
 
-        data=response.json()
+    async def start(self):
+        response = await asyncio.to_thread(
+            requests.get,
+            self.start_urls[0],
+            timeout=30
+        )
 
-        current=data['current']
-        
-        gold_18k=current['geram18']
-        gold_18k_p=gold_18k['p']
+        response.raise_for_status()
 
-        ons_gold=current['ons']
-        ons_gold_p=ons_gold['p']
+        data = response.json()
 
-        silver=current['silver_999']
-        silver_p=silver['p']
+        current = data['current']
 
-        coin=current['sekee']
-        coin_p=coin['p']
+        gold_18k = current['geram18']
+        ons_gold = current['ons']
+        silver = current['silver_999']
+        coin = current['sekee']
 
-        item=marketitem()
+        item = marketitem()
 
-        item['timestamp']=datetime.now().strftime("%Y-%m-%d  %H:%M:%S")
-        item['gold_18k']=gold_18k_p
-        item['ons_gold']=ons_gold_p
-        item['silver']=silver_p
-        item['coin']=coin_p
-
+        item['timestamp'] = datetime.now().strftime("%Y-%m-%d  %H:%M:%S")
+        item['gold_18k'] = gold_18k['p']
+        item['ons_gold'] = ons_gold['p']
+        item['silver'] = silver['p']
+        item['coin'] = coin['p']
 
         yield item
