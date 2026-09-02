@@ -23,7 +23,19 @@ engine = create_engine(
     "mysql+pymysql://market_user:Market1234@localhost/market_data"
 )
 
-output_path_sql=base_dir/"data/processed"/'price.sql'
-data.to_sql("price",con=engine ,if_exists="append",index=False)
+data.to_sql(
+    "price",
+    con=engine,
+    if_exists="replace",
+    index=False
+)
 
+df_sql = pd.read_sql(
+    "SELECT * FROM price",
+    con=engine
+)
 
+df_sql.to_csv(
+    base_dir / "data/processed/price-from-sql.csv",
+    index=False
+)

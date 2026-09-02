@@ -1,0 +1,924 @@
+Running Scrapy...
+2026-09-02 14:10:02 [scrapy.utils.log] INFO: Scrapy 2.18.0 started (bot: web_scraper)
+2026-09-02 14:10:02 [scrapy.utils.log] INFO: Versions:
+{'lxml': '6.1.2',
+ 'libxml2': '2.14.6',
+ 'cssselect': '1.5.0',
+ 'parsel': '1.11.0',
+ 'w3lib': '2.4.1',
+ 'Twisted': '26.4.0',
+ 'Python': '3.13.7 (main, Mar  3 2026, 12:19:54) [GCC 15.2.0]',
+ 'pyOpenSSL': '26.4.0 (OpenSSL 4.0.2 25 Aug 2026)',
+ 'cryptography': '50.0.1',
+ 'Platform': 'Linux-6.17.0-41-generic-x86_64-with-glibc2.42'}
+2026-09-02 14:10:02 [scrapy.crawler] DEBUG: Using AsyncCrawlerProcess
+2026-09-02 14:10:02 [asyncio] DEBUG: Using selector: EpollSelector
+2026-09-02 14:10:02 [scrapy.addons] INFO: Enabled addons:
+[]
+2026-09-02 14:10:02 [scrapy.utils.log] DEBUG: Using reactor: twisted.internet.asyncioreactor.AsyncioSelectorReactor
+2026-09-02 14:10:02 [scrapy.utils.log] DEBUG: Using asyncio event loop: asyncio.unix_events._UnixSelectorEventLoop
+2026-09-02 14:10:02 [scrapy.extensions.telnet] INFO: Telnet Password: 15c44a54614e6512
+2026-09-02 14:10:02 [scrapy.middleware] INFO: Enabled extensions:
+['scrapy.extensions.corestats.CoreStats',
+ 'scrapy.extensions.logcount.LogCount',
+ 'scrapy.extensions.telnet.TelnetConsole',
+ 'scrapy.extensions.memusage.MemoryUsage',
+ 'scrapy.extensions.logstats.LogStats']
+2026-09-02 14:10:02 [scrapy.crawler] INFO: Overridden settings:
+{'BOT_NAME': 'web_scraper',
+ 'CONCURRENT_REQUESTS_PER_DOMAIN': 1,
+ 'DOWNLOAD_DELAY': 1,
+ 'DOWNLOAD_TIMEOUT': 30,
+ 'FEED_EXPORT_ENCODING': 'utf-8',
+ 'NEWSPIDER_MODULE': 'web_scraper.spiders',
+ 'ROBOTSTXT_OBEY': True,
+ 'SPIDER_MODULES': ['web_scraper.spiders']}
+2026-09-02 14:10:02 [scrapy.middleware] INFO: Enabled downloader middlewares:
+['scrapy.downloadermiddlewares.offsite.OffsiteMiddleware',
+ 'scrapy.downloadermiddlewares.robotstxt.RobotsTxtMiddleware',
+ 'scrapy.downloadermiddlewares.httpauth.HttpAuthMiddleware',
+ 'scrapy.downloadermiddlewares.downloadtimeout.DownloadTimeoutMiddleware',
+ 'scrapy.downloadermiddlewares.defaultheaders.DefaultHeadersMiddleware',
+ 'scrapy.downloadermiddlewares.useragent.UserAgentMiddleware',
+ 'scrapy.downloadermiddlewares.retry.RetryMiddleware',
+ 'scrapy.downloadermiddlewares.redirect.MetaRefreshMiddleware',
+ 'scrapy.downloadermiddlewares.httpcompression.HttpCompressionMiddleware',
+ 'scrapy.downloadermiddlewares.redirect.RedirectMiddleware',
+ 'scrapy.downloadermiddlewares.cookies.CookiesMiddleware',
+ 'scrapy.downloadermiddlewares.httpproxy.HttpProxyMiddleware',
+ 'scrapy.downloadermiddlewares.stats.DownloaderStats']
+2026-09-02 14:10:02 [scrapy.middleware] INFO: Enabled spider middlewares:
+['scrapy.spidermiddlewares.start.StartSpiderMiddleware',
+ 'scrapy.spidermiddlewares.httperror.HttpErrorMiddleware',
+ 'scrapy.spidermiddlewares.referer.RefererMiddleware',
+ 'scrapy.spidermiddlewares.urllength.UrlLengthMiddleware',
+ 'scrapy.spidermiddlewares.depth.DepthMiddleware',
+ 'scrapy.spidermiddlewares.metacopy.MetaCopyDetectionMiddleware']
+2026-09-02 14:10:02 [scrapy.middleware] INFO: Enabled item pipelines:
+['web_scraper.pipelines.WebScraperPipeline']
+2026-09-02 14:10:02 [py.warnings] WARNING: /home/pc/Documents/web scrapy/web_scraper/.venv/lib/python3.13/site-packages/scrapy/pipelines/__init__.py:60: ScrapyDeprecationWarning: WebScraperPipeline.open_spider() requires a spider argument, this is deprecated and the argument will not be passed in future Scrapy versions. If you need to access the spider instance you can save the crawler instance passed to from_crawler() and use its spider attribute.
+  self._check_mw_method_spider_arg(mw.open_spider)
+
+2026-09-02 14:10:02 [py.warnings] WARNING: /home/pc/Documents/web scrapy/web_scraper/.venv/lib/python3.13/site-packages/scrapy/pipelines/__init__.py:63: ScrapyDeprecationWarning: WebScraperPipeline.close_spider() requires a spider argument, this is deprecated and the argument will not be passed in future Scrapy versions. If you need to access the spider instance you can save the crawler instance passed to from_crawler() and use its spider attribute.
+  self._check_mw_method_spider_arg(mw.close_spider)
+
+2026-09-02 14:10:02 [py.warnings] WARNING: /home/pc/Documents/web scrapy/web_scraper/.venv/lib/python3.13/site-packages/scrapy/pipelines/__init__.py:66: ScrapyDeprecationWarning: WebScraperPipeline.process_item() requires a spider argument, this is deprecated and the argument will not be passed in future Scrapy versions. If you need to access the spider instance you can save the crawler instance passed to from_crawler() and use its spider attribute.
+  self._check_mw_method_spider_arg(mw.process_item)
+
+2026-09-02 14:10:02 [scrapy.core.engine] INFO: Spider opened
+2026-09-02 14:10:02 [scrapy.extensions.logstats] INFO: Crawled 0 pages (at 0 pages/min), scraped 0 items (at 0 items/min)
+2026-09-02 14:10:02 [scrapy.extensions.telnet] INFO: Telnet console listening on 127.0.0.1:6023
+2026-09-02 14:10:02 [urllib3.connectionpool] DEBUG: Starting new HTTPS connection (1): call4.tgju.org:443
+2026-09-02 14:10:08 [urllib3.connectionpool] DEBUG: https://call4.tgju.org:443 "GET /ajax.json?rev=XjM9klM7SZvEdbsegxr3y3K3i3fZyi79VnB3ACfQhUTFLoakHIDorJz3nfT4 HTTP/1.1" 200 None
+2026-09-02 14:10:08 [scrapy.core.scraper] DEBUG: Scraped from web_scraper.spiders.market.marketspider.start
+{'coin': '2,260,100,000',
+ 'gold_18k': '224,953,000',
+ 'ons_gold': '4,310.14',
+ 'silver': '4,714,800',
+ 'timestamp': '2026-09-02  14:10:08'}
+2026-09-02 14:10:08 [scrapy.core.engine] INFO: Closing spider (finished)
+2026-09-02 14:10:08 [scrapy.statscollectors] INFO: Dumping Scrapy stats:
+{'elapsed_time_seconds': 5.783757829998649,
+ 'finish_reason': 'finished',
+ 'finish_time': datetime.datetime(2026, 9, 2, 10, 40, 8, 133018, tzinfo=datetime.timezone.utc),
+ 'item_scraped_count': 1,
+ 'items_per_minute': 12.0,
+ 'log_count/DEBUG': 3,
+ 'log_count/INFO': 3,
+ 'memusage/max': 73117696,
+ 'memusage/startup': 73117696,
+ 'responses_per_minute': 0.0,
+ 'start_time': datetime.datetime(2026, 9, 2, 10, 40, 2, 349259, tzinfo=datetime.timezone.utc)}
+2026-09-02 14:10:08 [scrapy.core.engine] INFO: Spider closed (finished)
+Running cleaning...
+<class 'pandas.DataFrame'>
+RangeIndex: 33 entries, 0 to 32
+Data columns (total 5 columns):
+ #   Column     Non-Null Count  Dtype  
+---  ------     --------------  -----  
+ 0   timestamp  33 non-null     str    
+ 1   gold_18k   33 non-null     str    
+ 2   ons_gold   33 non-null     float64
+ 3   silver     33 non-null     str    
+ 4   coin       33 non-null     str    
+dtypes: float64(1), str(4)
+memory usage: 1.4 KB
+None
+<class 'pandas.DataFrame'>
+RangeIndex: 33 entries, 0 to 32
+Data columns (total 5 columns):
+ #   Column     Non-Null Count  Dtype  
+---  ------     --------------  -----  
+ 0   timestamp  33 non-null     str    
+ 1   gold_18k   33 non-null     str    
+ 2   ons_gold   33 non-null     float64
+ 3   silver     33 non-null     int64  
+ 4   coin       33 non-null     str    
+dtypes: float64(1), int64(1), str(3)
+memory usage: 1.4 KB
+None
+<class 'pandas.DataFrame'>
+RangeIndex: 33 entries, 0 to 32
+Data columns (total 5 columns):
+ #   Column     Non-Null Count  Dtype  
+---  ------     --------------  -----  
+ 0   timestamp  33 non-null     str    
+ 1   gold_18k   33 non-null     str    
+ 2   ons_gold   33 non-null     float64
+ 3   silver     33 non-null     int64  
+ 4   coin       33 non-null     int64  
+dtypes: float64(1), int64(2), str(2)
+memory usage: 1.4 KB
+None
+<class 'pandas.DataFrame'>
+RangeIndex: 33 entries, 0 to 32
+Data columns (total 5 columns):
+ #   Column     Non-Null Count  Dtype  
+---  ------     --------------  -----  
+ 0   timestamp  33 non-null     str    
+ 1   gold_18k   33 non-null     int64  
+ 2   ons_gold   33 non-null     float64
+ 3   silver     33 non-null     int64  
+ 4   coin       33 non-null     int64  
+dtypes: float64(1), int64(3), str(1)
+memory usage: 1.4 KB
+None
+DONE
+Running Scrapy...
+2026-09-02 14:50:01 [scrapy.utils.log] INFO: Scrapy 2.18.0 started (bot: web_scraper)
+2026-09-02 14:50:01 [scrapy.utils.log] INFO: Versions:
+{'lxml': '6.1.2',
+ 'libxml2': '2.14.6',
+ 'cssselect': '1.5.0',
+ 'parsel': '1.11.0',
+ 'w3lib': '2.4.1',
+ 'Twisted': '26.4.0',
+ 'Python': '3.13.7 (main, Mar  3 2026, 12:19:54) [GCC 15.2.0]',
+ 'pyOpenSSL': '26.4.0 (OpenSSL 4.0.2 25 Aug 2026)',
+ 'cryptography': '50.0.1',
+ 'Platform': 'Linux-6.17.0-41-generic-x86_64-with-glibc2.42'}
+2026-09-02 14:50:01 [scrapy.crawler] DEBUG: Using AsyncCrawlerProcess
+2026-09-02 14:50:01 [asyncio] DEBUG: Using selector: EpollSelector
+2026-09-02 14:50:01 [scrapy.addons] INFO: Enabled addons:
+[]
+2026-09-02 14:50:01 [scrapy.utils.log] DEBUG: Using reactor: twisted.internet.asyncioreactor.AsyncioSelectorReactor
+2026-09-02 14:50:01 [scrapy.utils.log] DEBUG: Using asyncio event loop: asyncio.unix_events._UnixSelectorEventLoop
+2026-09-02 14:50:01 [scrapy.extensions.telnet] INFO: Telnet Password: babe88f28545443c
+2026-09-02 14:50:01 [scrapy.middleware] INFO: Enabled extensions:
+['scrapy.extensions.corestats.CoreStats',
+ 'scrapy.extensions.logcount.LogCount',
+ 'scrapy.extensions.telnet.TelnetConsole',
+ 'scrapy.extensions.memusage.MemoryUsage',
+ 'scrapy.extensions.logstats.LogStats']
+2026-09-02 14:50:01 [scrapy.crawler] INFO: Overridden settings:
+{'BOT_NAME': 'web_scraper',
+ 'CONCURRENT_REQUESTS_PER_DOMAIN': 1,
+ 'DOWNLOAD_DELAY': 1,
+ 'DOWNLOAD_TIMEOUT': 30,
+ 'FEED_EXPORT_ENCODING': 'utf-8',
+ 'NEWSPIDER_MODULE': 'web_scraper.spiders',
+ 'ROBOTSTXT_OBEY': True,
+ 'SPIDER_MODULES': ['web_scraper.spiders']}
+2026-09-02 14:50:01 [scrapy.middleware] INFO: Enabled downloader middlewares:
+['scrapy.downloadermiddlewares.offsite.OffsiteMiddleware',
+ 'scrapy.downloadermiddlewares.robotstxt.RobotsTxtMiddleware',
+ 'scrapy.downloadermiddlewares.httpauth.HttpAuthMiddleware',
+ 'scrapy.downloadermiddlewares.downloadtimeout.DownloadTimeoutMiddleware',
+ 'scrapy.downloadermiddlewares.defaultheaders.DefaultHeadersMiddleware',
+ 'scrapy.downloadermiddlewares.useragent.UserAgentMiddleware',
+ 'scrapy.downloadermiddlewares.retry.RetryMiddleware',
+ 'scrapy.downloadermiddlewares.redirect.MetaRefreshMiddleware',
+ 'scrapy.downloadermiddlewares.httpcompression.HttpCompressionMiddleware',
+ 'scrapy.downloadermiddlewares.redirect.RedirectMiddleware',
+ 'scrapy.downloadermiddlewares.cookies.CookiesMiddleware',
+ 'scrapy.downloadermiddlewares.httpproxy.HttpProxyMiddleware',
+ 'scrapy.downloadermiddlewares.stats.DownloaderStats']
+2026-09-02 14:50:01 [scrapy.middleware] INFO: Enabled spider middlewares:
+['scrapy.spidermiddlewares.start.StartSpiderMiddleware',
+ 'scrapy.spidermiddlewares.httperror.HttpErrorMiddleware',
+ 'scrapy.spidermiddlewares.referer.RefererMiddleware',
+ 'scrapy.spidermiddlewares.urllength.UrlLengthMiddleware',
+ 'scrapy.spidermiddlewares.depth.DepthMiddleware',
+ 'scrapy.spidermiddlewares.metacopy.MetaCopyDetectionMiddleware']
+2026-09-02 14:50:01 [scrapy.middleware] INFO: Enabled item pipelines:
+['web_scraper.pipelines.WebScraperPipeline']
+2026-09-02 14:50:01 [py.warnings] WARNING: /home/pc/Documents/web scrapy/web_scraper/.venv/lib/python3.13/site-packages/scrapy/pipelines/__init__.py:60: ScrapyDeprecationWarning: WebScraperPipeline.open_spider() requires a spider argument, this is deprecated and the argument will not be passed in future Scrapy versions. If you need to access the spider instance you can save the crawler instance passed to from_crawler() and use its spider attribute.
+  self._check_mw_method_spider_arg(mw.open_spider)
+
+2026-09-02 14:50:01 [py.warnings] WARNING: /home/pc/Documents/web scrapy/web_scraper/.venv/lib/python3.13/site-packages/scrapy/pipelines/__init__.py:63: ScrapyDeprecationWarning: WebScraperPipeline.close_spider() requires a spider argument, this is deprecated and the argument will not be passed in future Scrapy versions. If you need to access the spider instance you can save the crawler instance passed to from_crawler() and use its spider attribute.
+  self._check_mw_method_spider_arg(mw.close_spider)
+
+2026-09-02 14:50:01 [py.warnings] WARNING: /home/pc/Documents/web scrapy/web_scraper/.venv/lib/python3.13/site-packages/scrapy/pipelines/__init__.py:66: ScrapyDeprecationWarning: WebScraperPipeline.process_item() requires a spider argument, this is deprecated and the argument will not be passed in future Scrapy versions. If you need to access the spider instance you can save the crawler instance passed to from_crawler() and use its spider attribute.
+  self._check_mw_method_spider_arg(mw.process_item)
+
+2026-09-02 14:50:01 [scrapy.core.engine] INFO: Spider opened
+2026-09-02 14:50:01 [scrapy.extensions.logstats] INFO: Crawled 0 pages (at 0 pages/min), scraped 0 items (at 0 items/min)
+2026-09-02 14:50:01 [scrapy.extensions.telnet] INFO: Telnet console listening on 127.0.0.1:6023
+2026-09-02 14:50:01 [urllib3.connectionpool] DEBUG: Starting new HTTPS connection (1): call4.tgju.org:443
+2026-09-02 14:50:01 [scrapy.core.engine] ERROR: Error while reading start items and requests: HTTPSConnectionPool(host='call4.tgju.org', port=443): Max retries exceeded with url: /ajax.json?rev=XjM9klM7SZvEdbsegxr3y3K3i3fZyi79VnB3ACfQhUTFLoakHIDorJz3nfT4 (Caused by NameResolutionError("HTTPSConnection(host='call4.tgju.org', port=443): Failed to resolve 'call4.tgju.org' ([Errno -3] Temporary failure in name resolution)")).
+Traceback (most recent call last):
+  File "/home/pc/Documents/web scrapy/web_scraper/.venv/lib/python3.13/site-packages/urllib3/connection.py", line 204, in _new_conn
+    sock = connection.create_connection(
+        (self._dns_host, self.port),
+    ...<2 lines>...
+        socket_options=self.socket_options,
+    )
+  File "/home/pc/Documents/web scrapy/web_scraper/.venv/lib/python3.13/site-packages/urllib3/util/connection.py", line 60, in create_connection
+    for res in socket.getaddrinfo(host, port, family, socket.SOCK_STREAM):
+               ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.13/socket.py", line 977, in getaddrinfo
+    for res in _socket.getaddrinfo(host, port, family, type, proto, flags):
+               ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+socket.gaierror: [Errno -3] Temporary failure in name resolution
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/pc/Documents/web scrapy/web_scraper/.venv/lib/python3.13/site-packages/urllib3/connectionpool.py", line 788, in urlopen
+    response = self._make_request(
+        conn,
+    ...<10 lines>...
+        **response_kw,
+    )
+  File "/home/pc/Documents/web scrapy/web_scraper/.venv/lib/python3.13/site-packages/urllib3/connectionpool.py", line 488, in _make_request
+    raise new_e
+  File "/home/pc/Documents/web scrapy/web_scraper/.venv/lib/python3.13/site-packages/urllib3/connectionpool.py", line 464, in _make_request
+    self._validate_conn(conn)
+    ~~~~~~~~~~~~~~~~~~~^^^^^^
+  File "/home/pc/Documents/web scrapy/web_scraper/.venv/lib/python3.13/site-packages/urllib3/connectionpool.py", line 1106, in _validate_conn
+    conn.connect()
+    ~~~~~~~~~~~~^^
+  File "/home/pc/Documents/web scrapy/web_scraper/.venv/lib/python3.13/site-packages/urllib3/connection.py", line 759, in connect
+    self.sock = sock = self._new_conn()
+                       ~~~~~~~~~~~~~~^^
+  File "/home/pc/Documents/web scrapy/web_scraper/.venv/lib/python3.13/site-packages/urllib3/connection.py", line 211, in _new_conn
+    raise NameResolutionError(self.host, self, e) from e
+urllib3.exceptions.NameResolutionError: HTTPSConnection(host='call4.tgju.org', port=443): Failed to resolve 'call4.tgju.org' ([Errno -3] Temporary failure in name resolution)
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/pc/Documents/web scrapy/web_scraper/.venv/lib/python3.13/site-packages/requests/adapters.py", line 696, in send
+    resp = conn.urlopen(
+        method=request.method,
+    ...<9 lines>...
+        chunked=chunked,
+    )
+  File "/home/pc/Documents/web scrapy/web_scraper/.venv/lib/python3.13/site-packages/urllib3/connectionpool.py", line 842, in urlopen
+    retries = retries.increment(
+        method, url, error=new_e, _pool=self, _stacktrace=sys.exc_info()[2]
+    )
+  File "/home/pc/Documents/web scrapy/web_scraper/.venv/lib/python3.13/site-packages/urllib3/util/retry.py", line 543, in increment
+    raise MaxRetryError(_pool, url, reason) from reason  # type: ignore[arg-type]
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+urllib3.exceptions.MaxRetryError: HTTPSConnectionPool(host='call4.tgju.org', port=443): Max retries exceeded with url: /ajax.json?rev=XjM9klM7SZvEdbsegxr3y3K3i3fZyi79VnB3ACfQhUTFLoakHIDorJz3nfT4 (Caused by NameResolutionError("HTTPSConnection(host='call4.tgju.org', port=443): Failed to resolve 'call4.tgju.org' ([Errno -3] Temporary failure in name resolution)"))
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/pc/Documents/web scrapy/web_scraper/.venv/lib/python3.13/site-packages/scrapy/core/engine.py", line 277, in _process_start_next
+    item_or_request = await anext(self._start)
+                      ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/pc/Documents/web scrapy/web_scraper/.venv/lib/python3.13/site-packages/scrapy/spidermiddlewares/base.py", line 45, in process_start
+    async for o in start:
+        if (o := self._get_processed(o, None)) is not None:
+            yield o
+  File "/home/pc/Documents/web scrapy/web_scraper/.venv/lib/python3.13/site-packages/scrapy/spidermiddlewares/base.py", line 45, in process_start
+    async for o in start:
+        if (o := self._get_processed(o, None)) is not None:
+            yield o
+  File "/home/pc/Documents/web scrapy/web_scraper/.venv/lib/python3.13/site-packages/scrapy/spidermiddlewares/base.py", line 45, in process_start
+    async for o in start:
+        if (o := self._get_processed(o, None)) is not None:
+            yield o
+  [Previous line repeated 2 more times]
+  File "/home/pc/Documents/web scrapy/web_scraper/web_scraper/spiders/market.py", line 17, in start
+    response = await asyncio.to_thread(
+               ^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<3 lines>...
+    )
+    ^
+  File "/usr/lib/python3.13/asyncio/threads.py", line 25, in to_thread
+    return await loop.run_in_executor(None, func_call)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.13/concurrent/futures/thread.py", line 59, in run
+    result = self.fn(*self.args, **self.kwargs)
+  File "/home/pc/Documents/web scrapy/web_scraper/.venv/lib/python3.13/site-packages/requests/api.py", line 87, in get
+    return request("get", url, params=params, **kwargs)
+  File "/home/pc/Documents/web scrapy/web_scraper/.venv/lib/python3.13/site-packages/requests/api.py", line 71, in request
+    return session.request(method=method, url=url, **kwargs)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/pc/Documents/web scrapy/web_scraper/.venv/lib/python3.13/site-packages/requests/sessions.py", line 651, in request
+    resp = self.send(prep, **send_kwargs)
+  File "/home/pc/Documents/web scrapy/web_scraper/.venv/lib/python3.13/site-packages/requests/sessions.py", line 784, in send
+    r = adapter.send(request, **kwargs)
+  File "/home/pc/Documents/web scrapy/web_scraper/.venv/lib/python3.13/site-packages/requests/adapters.py", line 729, in send
+    raise ConnectionError(e, request=request)
+requests.exceptions.ConnectionError: HTTPSConnectionPool(host='call4.tgju.org', port=443): Max retries exceeded with url: /ajax.json?rev=XjM9klM7SZvEdbsegxr3y3K3i3fZyi79VnB3ACfQhUTFLoakHIDorJz3nfT4 (Caused by NameResolutionError("HTTPSConnection(host='call4.tgju.org', port=443): Failed to resolve 'call4.tgju.org' ([Errno -3] Temporary failure in name resolution)"))
+Traceback (most recent call last):
+  File "/home/pc/Documents/web scrapy/web_scraper/.venv/lib/python3.13/site-packages/urllib3/connection.py", line 204, in _new_conn
+    sock = connection.create_connection(
+        (self._dns_host, self.port),
+    ...<2 lines>...
+        socket_options=self.socket_options,
+    )
+  File "/home/pc/Documents/web scrapy/web_scraper/.venv/lib/python3.13/site-packages/urllib3/util/connection.py", line 60, in create_connection
+    for res in socket.getaddrinfo(host, port, family, socket.SOCK_STREAM):
+               ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.13/socket.py", line 977, in getaddrinfo
+    for res in _socket.getaddrinfo(host, port, family, type, proto, flags):
+               ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+socket.gaierror: [Errno -3] Temporary failure in name resolution
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/pc/Documents/web scrapy/web_scraper/.venv/lib/python3.13/site-packages/urllib3/connectionpool.py", line 788, in urlopen
+    response = self._make_request(
+        conn,
+    ...<10 lines>...
+        **response_kw,
+    )
+  File "/home/pc/Documents/web scrapy/web_scraper/.venv/lib/python3.13/site-packages/urllib3/connectionpool.py", line 488, in _make_request
+    raise new_e
+  File "/home/pc/Documents/web scrapy/web_scraper/.venv/lib/python3.13/site-packages/urllib3/connectionpool.py", line 464, in _make_request
+    self._validate_conn(conn)
+    ~~~~~~~~~~~~~~~~~~~^^^^^^
+  File "/home/pc/Documents/web scrapy/web_scraper/.venv/lib/python3.13/site-packages/urllib3/connectionpool.py", line 1106, in _validate_conn
+    conn.connect()
+    ~~~~~~~~~~~~^^
+  File "/home/pc/Documents/web scrapy/web_scraper/.venv/lib/python3.13/site-packages/urllib3/connection.py", line 759, in connect
+    self.sock = sock = self._new_conn()
+                       ~~~~~~~~~~~~~~^^
+  File "/home/pc/Documents/web scrapy/web_scraper/.venv/lib/python3.13/site-packages/urllib3/connection.py", line 211, in _new_conn
+    raise NameResolutionError(self.host, self, e) from e
+urllib3.exceptions.NameResolutionError: HTTPSConnection(host='call4.tgju.org', port=443): Failed to resolve 'call4.tgju.org' ([Errno -3] Temporary failure in name resolution)
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/pc/Documents/web scrapy/web_scraper/.venv/lib/python3.13/site-packages/requests/adapters.py", line 696, in send
+    resp = conn.urlopen(
+        method=request.method,
+    ...<9 lines>...
+        chunked=chunked,
+    )
+  File "/home/pc/Documents/web scrapy/web_scraper/.venv/lib/python3.13/site-packages/urllib3/connectionpool.py", line 842, in urlopen
+    retries = retries.increment(
+        method, url, error=new_e, _pool=self, _stacktrace=sys.exc_info()[2]
+    )
+  File "/home/pc/Documents/web scrapy/web_scraper/.venv/lib/python3.13/site-packages/urllib3/util/retry.py", line 543, in increment
+    raise MaxRetryError(_pool, url, reason) from reason  # type: ignore[arg-type]
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+urllib3.exceptions.MaxRetryError: HTTPSConnectionPool(host='call4.tgju.org', port=443): Max retries exceeded with url: /ajax.json?rev=XjM9klM7SZvEdbsegxr3y3K3i3fZyi79VnB3ACfQhUTFLoakHIDorJz3nfT4 (Caused by NameResolutionError("HTTPSConnection(host='call4.tgju.org', port=443): Failed to resolve 'call4.tgju.org' ([Errno -3] Temporary failure in name resolution)"))
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/pc/Documents/web scrapy/web_scraper/.venv/lib/python3.13/site-packages/scrapy/core/engine.py", line 277, in _process_start_next
+    item_or_request = await anext(self._start)
+                      ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/pc/Documents/web scrapy/web_scraper/.venv/lib/python3.13/site-packages/scrapy/spidermiddlewares/base.py", line 45, in process_start
+    async for o in start:
+        if (o := self._get_processed(o, None)) is not None:
+            yield o
+  File "/home/pc/Documents/web scrapy/web_scraper/.venv/lib/python3.13/site-packages/scrapy/spidermiddlewares/base.py", line 45, in process_start
+    async for o in start:
+        if (o := self._get_processed(o, None)) is not None:
+            yield o
+  File "/home/pc/Documents/web scrapy/web_scraper/.venv/lib/python3.13/site-packages/scrapy/spidermiddlewares/base.py", line 45, in process_start
+    async for o in start:
+        if (o := self._get_processed(o, None)) is not None:
+            yield o
+  [Previous line repeated 2 more times]
+  File "/home/pc/Documents/web scrapy/web_scraper/web_scraper/spiders/market.py", line 17, in start
+    response = await asyncio.to_thread(
+               ^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<3 lines>...
+    )
+    ^
+  File "/usr/lib/python3.13/asyncio/threads.py", line 25, in to_thread
+    return await loop.run_in_executor(None, func_call)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.13/concurrent/futures/thread.py", line 59, in run
+    result = self.fn(*self.args, **self.kwargs)
+  File "/home/pc/Documents/web scrapy/web_scraper/.venv/lib/python3.13/site-packages/requests/api.py", line 87, in get
+    return request("get", url, params=params, **kwargs)
+  File "/home/pc/Documents/web scrapy/web_scraper/.venv/lib/python3.13/site-packages/requests/api.py", line 71, in request
+    return session.request(method=method, url=url, **kwargs)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/pc/Documents/web scrapy/web_scraper/.venv/lib/python3.13/site-packages/requests/sessions.py", line 651, in request
+    resp = self.send(prep, **send_kwargs)
+  File "/home/pc/Documents/web scrapy/web_scraper/.venv/lib/python3.13/site-packages/requests/sessions.py", line 784, in send
+    r = adapter.send(request, **kwargs)
+  File "/home/pc/Documents/web scrapy/web_scraper/.venv/lib/python3.13/site-packages/requests/adapters.py", line 729, in send
+    raise ConnectionError(e, request=request)
+requests.exceptions.ConnectionError: HTTPSConnectionPool(host='call4.tgju.org', port=443): Max retries exceeded with url: /ajax.json?rev=XjM9klM7SZvEdbsegxr3y3K3i3fZyi79VnB3ACfQhUTFLoakHIDorJz3nfT4 (Caused by NameResolutionError("HTTPSConnection(host='call4.tgju.org', port=443): Failed to resolve 'call4.tgju.org' ([Errno -3] Temporary failure in name resolution)"))
+2026-09-02 14:50:01 [scrapy.core.engine] INFO: Closing spider (start_error)
+2026-09-02 14:50:01 [scrapy.statscollectors] INFO: Dumping Scrapy stats:
+{'elapsed_time_seconds': 0.03214115400260198,
+ 'finish_reason': 'start_error',
+ 'finish_time': datetime.datetime(2026, 9, 2, 11, 20, 1, 695200, tzinfo=datetime.timezone.utc),
+ 'items_per_minute': None,
+ 'log_count/DEBUG': 1,
+ 'log_count/ERROR': 1,
+ 'log_count/INFO': 3,
+ 'memusage/max': 72736768,
+ 'memusage/startup': 72736768,
+ 'responses_per_minute': None,
+ 'spider_exceptions/ConnectionError': 1,
+ 'spider_exceptions/count': 1,
+ 'start_time': datetime.datetime(2026, 9, 2, 11, 20, 1, 663059, tzinfo=datetime.timezone.utc)}
+2026-09-02 14:50:01 [scrapy.core.engine] INFO: Spider closed (start_error)
+Running cleaning...
+<class 'pandas.DataFrame'>
+RangeIndex: 33 entries, 0 to 32
+Data columns (total 5 columns):
+ #   Column     Non-Null Count  Dtype  
+---  ------     --------------  -----  
+ 0   timestamp  33 non-null     str    
+ 1   gold_18k   33 non-null     str    
+ 2   ons_gold   33 non-null     float64
+ 3   silver     33 non-null     str    
+ 4   coin       33 non-null     str    
+dtypes: float64(1), str(4)
+memory usage: 1.4 KB
+None
+<class 'pandas.DataFrame'>
+RangeIndex: 33 entries, 0 to 32
+Data columns (total 5 columns):
+ #   Column     Non-Null Count  Dtype  
+---  ------     --------------  -----  
+ 0   timestamp  33 non-null     str    
+ 1   gold_18k   33 non-null     str    
+ 2   ons_gold   33 non-null     float64
+ 3   silver     33 non-null     int64  
+ 4   coin       33 non-null     str    
+dtypes: float64(1), int64(1), str(3)
+memory usage: 1.4 KB
+None
+<class 'pandas.DataFrame'>
+RangeIndex: 33 entries, 0 to 32
+Data columns (total 5 columns):
+ #   Column     Non-Null Count  Dtype  
+---  ------     --------------  -----  
+ 0   timestamp  33 non-null     str    
+ 1   gold_18k   33 non-null     str    
+ 2   ons_gold   33 non-null     float64
+ 3   silver     33 non-null     int64  
+ 4   coin       33 non-null     int64  
+dtypes: float64(1), int64(2), str(2)
+memory usage: 1.4 KB
+None
+<class 'pandas.DataFrame'>
+RangeIndex: 33 entries, 0 to 32
+Data columns (total 5 columns):
+ #   Column     Non-Null Count  Dtype  
+---  ------     --------------  -----  
+ 0   timestamp  33 non-null     str    
+ 1   gold_18k   33 non-null     int64  
+ 2   ons_gold   33 non-null     float64
+ 3   silver     33 non-null     int64  
+ 4   coin       33 non-null     int64  
+dtypes: float64(1), int64(3), str(1)
+memory usage: 1.4 KB
+None
+DONE
+Running Scrapy...
+2026-09-02 15:00:01 [scrapy.utils.log] INFO: Scrapy 2.18.0 started (bot: web_scraper)
+2026-09-02 15:00:01 [scrapy.utils.log] INFO: Versions:
+{'lxml': '6.1.2',
+ 'libxml2': '2.14.6',
+ 'cssselect': '1.5.0',
+ 'parsel': '1.11.0',
+ 'w3lib': '2.4.1',
+ 'Twisted': '26.4.0',
+ 'Python': '3.13.7 (main, Mar  3 2026, 12:19:54) [GCC 15.2.0]',
+ 'pyOpenSSL': '26.4.0 (OpenSSL 4.0.2 25 Aug 2026)',
+ 'cryptography': '50.0.1',
+ 'Platform': 'Linux-6.17.0-41-generic-x86_64-with-glibc2.42'}
+2026-09-02 15:00:01 [scrapy.crawler] DEBUG: Using AsyncCrawlerProcess
+2026-09-02 15:00:01 [asyncio] DEBUG: Using selector: EpollSelector
+2026-09-02 15:00:01 [scrapy.addons] INFO: Enabled addons:
+[]
+2026-09-02 15:00:01 [scrapy.utils.log] DEBUG: Using reactor: twisted.internet.asyncioreactor.AsyncioSelectorReactor
+2026-09-02 15:00:01 [scrapy.utils.log] DEBUG: Using asyncio event loop: asyncio.unix_events._UnixSelectorEventLoop
+2026-09-02 15:00:01 [scrapy.extensions.telnet] INFO: Telnet Password: c37edcc85ee2f649
+2026-09-02 15:00:01 [scrapy.middleware] INFO: Enabled extensions:
+['scrapy.extensions.corestats.CoreStats',
+ 'scrapy.extensions.logcount.LogCount',
+ 'scrapy.extensions.telnet.TelnetConsole',
+ 'scrapy.extensions.memusage.MemoryUsage',
+ 'scrapy.extensions.logstats.LogStats']
+2026-09-02 15:00:01 [scrapy.crawler] INFO: Overridden settings:
+{'BOT_NAME': 'web_scraper',
+ 'CONCURRENT_REQUESTS_PER_DOMAIN': 1,
+ 'DOWNLOAD_DELAY': 1,
+ 'DOWNLOAD_TIMEOUT': 30,
+ 'FEED_EXPORT_ENCODING': 'utf-8',
+ 'NEWSPIDER_MODULE': 'web_scraper.spiders',
+ 'ROBOTSTXT_OBEY': True,
+ 'SPIDER_MODULES': ['web_scraper.spiders']}
+2026-09-02 15:00:02 [scrapy.middleware] INFO: Enabled downloader middlewares:
+['scrapy.downloadermiddlewares.offsite.OffsiteMiddleware',
+ 'scrapy.downloadermiddlewares.robotstxt.RobotsTxtMiddleware',
+ 'scrapy.downloadermiddlewares.httpauth.HttpAuthMiddleware',
+ 'scrapy.downloadermiddlewares.downloadtimeout.DownloadTimeoutMiddleware',
+ 'scrapy.downloadermiddlewares.defaultheaders.DefaultHeadersMiddleware',
+ 'scrapy.downloadermiddlewares.useragent.UserAgentMiddleware',
+ 'scrapy.downloadermiddlewares.retry.RetryMiddleware',
+ 'scrapy.downloadermiddlewares.redirect.MetaRefreshMiddleware',
+ 'scrapy.downloadermiddlewares.httpcompression.HttpCompressionMiddleware',
+ 'scrapy.downloadermiddlewares.redirect.RedirectMiddleware',
+ 'scrapy.downloadermiddlewares.cookies.CookiesMiddleware',
+ 'scrapy.downloadermiddlewares.httpproxy.HttpProxyMiddleware',
+ 'scrapy.downloadermiddlewares.stats.DownloaderStats']
+2026-09-02 15:00:02 [scrapy.middleware] INFO: Enabled spider middlewares:
+['scrapy.spidermiddlewares.start.StartSpiderMiddleware',
+ 'scrapy.spidermiddlewares.httperror.HttpErrorMiddleware',
+ 'scrapy.spidermiddlewares.referer.RefererMiddleware',
+ 'scrapy.spidermiddlewares.urllength.UrlLengthMiddleware',
+ 'scrapy.spidermiddlewares.depth.DepthMiddleware',
+ 'scrapy.spidermiddlewares.metacopy.MetaCopyDetectionMiddleware']
+2026-09-02 15:00:02 [scrapy.middleware] INFO: Enabled item pipelines:
+['web_scraper.pipelines.WebScraperPipeline']
+2026-09-02 15:00:02 [py.warnings] WARNING: /home/pc/Documents/web scrapy/web_scraper/.venv/lib/python3.13/site-packages/scrapy/pipelines/__init__.py:60: ScrapyDeprecationWarning: WebScraperPipeline.open_spider() requires a spider argument, this is deprecated and the argument will not be passed in future Scrapy versions. If you need to access the spider instance you can save the crawler instance passed to from_crawler() and use its spider attribute.
+  self._check_mw_method_spider_arg(mw.open_spider)
+
+2026-09-02 15:00:02 [py.warnings] WARNING: /home/pc/Documents/web scrapy/web_scraper/.venv/lib/python3.13/site-packages/scrapy/pipelines/__init__.py:63: ScrapyDeprecationWarning: WebScraperPipeline.close_spider() requires a spider argument, this is deprecated and the argument will not be passed in future Scrapy versions. If you need to access the spider instance you can save the crawler instance passed to from_crawler() and use its spider attribute.
+  self._check_mw_method_spider_arg(mw.close_spider)
+
+2026-09-02 15:00:02 [py.warnings] WARNING: /home/pc/Documents/web scrapy/web_scraper/.venv/lib/python3.13/site-packages/scrapy/pipelines/__init__.py:66: ScrapyDeprecationWarning: WebScraperPipeline.process_item() requires a spider argument, this is deprecated and the argument will not be passed in future Scrapy versions. If you need to access the spider instance you can save the crawler instance passed to from_crawler() and use its spider attribute.
+  self._check_mw_method_spider_arg(mw.process_item)
+
+2026-09-02 15:00:02 [scrapy.core.engine] INFO: Spider opened
+2026-09-02 15:00:02 [scrapy.extensions.logstats] INFO: Crawled 0 pages (at 0 pages/min), scraped 0 items (at 0 items/min)
+2026-09-02 15:00:02 [scrapy.extensions.telnet] INFO: Telnet console listening on 127.0.0.1:6023
+2026-09-02 15:00:02 [urllib3.connectionpool] DEBUG: Starting new HTTPS connection (1): call4.tgju.org:443
+2026-09-02 15:00:03 [urllib3.connectionpool] DEBUG: https://call4.tgju.org:443 "GET /ajax.json?rev=XjM9klM7SZvEdbsegxr3y3K3i3fZyi79VnB3ACfQhUTFLoakHIDorJz3nfT4 HTTP/1.1" 200 None
+2026-09-02 15:00:03 [scrapy.core.scraper] DEBUG: Scraped from web_scraper.spiders.market.marketspider.start
+{'coin': '2,259,850,000',
+ 'gold_18k': '225,370,000',
+ 'ons_gold': '4,317.99',
+ 'silver': '4,711,900',
+ 'timestamp': '2026-09-02  15:00:03'}
+2026-09-02 15:00:03 [scrapy.core.engine] INFO: Closing spider (finished)
+2026-09-02 15:00:03 [scrapy.statscollectors] INFO: Dumping Scrapy stats:
+{'elapsed_time_seconds': 1.4545681130002777,
+ 'finish_reason': 'finished',
+ 'finish_time': datetime.datetime(2026, 9, 2, 11, 30, 3, 538605, tzinfo=datetime.timezone.utc),
+ 'item_scraped_count': 1,
+ 'items_per_minute': 60.0,
+ 'log_count/DEBUG': 3,
+ 'log_count/INFO': 3,
+ 'memusage/max': 73162752,
+ 'memusage/startup': 73162752,
+ 'responses_per_minute': 0.0,
+ 'start_time': datetime.datetime(2026, 9, 2, 11, 30, 2, 84034, tzinfo=datetime.timezone.utc)}
+2026-09-02 15:00:03 [scrapy.core.engine] INFO: Spider closed (finished)
+Running cleaning...
+<class 'pandas.DataFrame'>
+RangeIndex: 34 entries, 0 to 33
+Data columns (total 5 columns):
+ #   Column     Non-Null Count  Dtype  
+---  ------     --------------  -----  
+ 0   timestamp  34 non-null     str    
+ 1   gold_18k   34 non-null     str    
+ 2   ons_gold   34 non-null     float64
+ 3   silver     34 non-null     str    
+ 4   coin       34 non-null     str    
+dtypes: float64(1), str(4)
+memory usage: 1.5 KB
+None
+<class 'pandas.DataFrame'>
+RangeIndex: 34 entries, 0 to 33
+Data columns (total 5 columns):
+ #   Column     Non-Null Count  Dtype  
+---  ------     --------------  -----  
+ 0   timestamp  34 non-null     str    
+ 1   gold_18k   34 non-null     str    
+ 2   ons_gold   34 non-null     float64
+ 3   silver     34 non-null     int64  
+ 4   coin       34 non-null     str    
+dtypes: float64(1), int64(1), str(3)
+memory usage: 1.5 KB
+None
+<class 'pandas.DataFrame'>
+RangeIndex: 34 entries, 0 to 33
+Data columns (total 5 columns):
+ #   Column     Non-Null Count  Dtype  
+---  ------     --------------  -----  
+ 0   timestamp  34 non-null     str    
+ 1   gold_18k   34 non-null     str    
+ 2   ons_gold   34 non-null     float64
+ 3   silver     34 non-null     int64  
+ 4   coin       34 non-null     int64  
+dtypes: float64(1), int64(2), str(2)
+memory usage: 1.5 KB
+None
+<class 'pandas.DataFrame'>
+RangeIndex: 34 entries, 0 to 33
+Data columns (total 5 columns):
+ #   Column     Non-Null Count  Dtype  
+---  ------     --------------  -----  
+ 0   timestamp  34 non-null     str    
+ 1   gold_18k   34 non-null     int64  
+ 2   ons_gold   34 non-null     float64
+ 3   silver     34 non-null     int64  
+ 4   coin       34 non-null     int64  
+dtypes: float64(1), int64(3), str(1)
+memory usage: 1.5 KB
+None
+DONE
+Running Scrapy...
+2026-09-02 15:10:01 [scrapy.utils.log] INFO: Scrapy 2.18.0 started (bot: web_scraper)
+2026-09-02 15:10:01 [scrapy.utils.log] INFO: Versions:
+{'lxml': '6.1.2',
+ 'libxml2': '2.14.6',
+ 'cssselect': '1.5.0',
+ 'parsel': '1.11.0',
+ 'w3lib': '2.4.1',
+ 'Twisted': '26.4.0',
+ 'Python': '3.13.7 (main, Mar  3 2026, 12:19:54) [GCC 15.2.0]',
+ 'pyOpenSSL': '26.4.0 (OpenSSL 4.0.2 25 Aug 2026)',
+ 'cryptography': '50.0.1',
+ 'Platform': 'Linux-6.17.0-41-generic-x86_64-with-glibc2.42'}
+2026-09-02 15:10:01 [scrapy.crawler] DEBUG: Using AsyncCrawlerProcess
+2026-09-02 15:10:01 [asyncio] DEBUG: Using selector: EpollSelector
+2026-09-02 15:10:01 [scrapy.addons] INFO: Enabled addons:
+[]
+2026-09-02 15:10:01 [scrapy.utils.log] DEBUG: Using reactor: twisted.internet.asyncioreactor.AsyncioSelectorReactor
+2026-09-02 15:10:01 [scrapy.utils.log] DEBUG: Using asyncio event loop: asyncio.unix_events._UnixSelectorEventLoop
+2026-09-02 15:10:01 [scrapy.extensions.telnet] INFO: Telnet Password: 28302d67ac90cf83
+2026-09-02 15:10:01 [scrapy.middleware] INFO: Enabled extensions:
+['scrapy.extensions.corestats.CoreStats',
+ 'scrapy.extensions.logcount.LogCount',
+ 'scrapy.extensions.telnet.TelnetConsole',
+ 'scrapy.extensions.memusage.MemoryUsage',
+ 'scrapy.extensions.logstats.LogStats']
+2026-09-02 15:10:01 [scrapy.crawler] INFO: Overridden settings:
+{'BOT_NAME': 'web_scraper',
+ 'CONCURRENT_REQUESTS_PER_DOMAIN': 1,
+ 'DOWNLOAD_DELAY': 1,
+ 'DOWNLOAD_TIMEOUT': 30,
+ 'FEED_EXPORT_ENCODING': 'utf-8',
+ 'NEWSPIDER_MODULE': 'web_scraper.spiders',
+ 'ROBOTSTXT_OBEY': True,
+ 'SPIDER_MODULES': ['web_scraper.spiders']}
+2026-09-02 15:10:01 [scrapy.middleware] INFO: Enabled downloader middlewares:
+['scrapy.downloadermiddlewares.offsite.OffsiteMiddleware',
+ 'scrapy.downloadermiddlewares.robotstxt.RobotsTxtMiddleware',
+ 'scrapy.downloadermiddlewares.httpauth.HttpAuthMiddleware',
+ 'scrapy.downloadermiddlewares.downloadtimeout.DownloadTimeoutMiddleware',
+ 'scrapy.downloadermiddlewares.defaultheaders.DefaultHeadersMiddleware',
+ 'scrapy.downloadermiddlewares.useragent.UserAgentMiddleware',
+ 'scrapy.downloadermiddlewares.retry.RetryMiddleware',
+ 'scrapy.downloadermiddlewares.redirect.MetaRefreshMiddleware',
+ 'scrapy.downloadermiddlewares.httpcompression.HttpCompressionMiddleware',
+ 'scrapy.downloadermiddlewares.redirect.RedirectMiddleware',
+ 'scrapy.downloadermiddlewares.cookies.CookiesMiddleware',
+ 'scrapy.downloadermiddlewares.httpproxy.HttpProxyMiddleware',
+ 'scrapy.downloadermiddlewares.stats.DownloaderStats']
+2026-09-02 15:10:01 [scrapy.middleware] INFO: Enabled spider middlewares:
+['scrapy.spidermiddlewares.start.StartSpiderMiddleware',
+ 'scrapy.spidermiddlewares.httperror.HttpErrorMiddleware',
+ 'scrapy.spidermiddlewares.referer.RefererMiddleware',
+ 'scrapy.spidermiddlewares.urllength.UrlLengthMiddleware',
+ 'scrapy.spidermiddlewares.depth.DepthMiddleware',
+ 'scrapy.spidermiddlewares.metacopy.MetaCopyDetectionMiddleware']
+2026-09-02 15:10:01 [scrapy.middleware] INFO: Enabled item pipelines:
+['web_scraper.pipelines.WebScraperPipeline']
+2026-09-02 15:10:01 [py.warnings] WARNING: /home/pc/Documents/web scrapy/web_scraper/.venv/lib/python3.13/site-packages/scrapy/pipelines/__init__.py:60: ScrapyDeprecationWarning: WebScraperPipeline.open_spider() requires a spider argument, this is deprecated and the argument will not be passed in future Scrapy versions. If you need to access the spider instance you can save the crawler instance passed to from_crawler() and use its spider attribute.
+  self._check_mw_method_spider_arg(mw.open_spider)
+
+2026-09-02 15:10:01 [py.warnings] WARNING: /home/pc/Documents/web scrapy/web_scraper/.venv/lib/python3.13/site-packages/scrapy/pipelines/__init__.py:63: ScrapyDeprecationWarning: WebScraperPipeline.close_spider() requires a spider argument, this is deprecated and the argument will not be passed in future Scrapy versions. If you need to access the spider instance you can save the crawler instance passed to from_crawler() and use its spider attribute.
+  self._check_mw_method_spider_arg(mw.close_spider)
+
+2026-09-02 15:10:01 [py.warnings] WARNING: /home/pc/Documents/web scrapy/web_scraper/.venv/lib/python3.13/site-packages/scrapy/pipelines/__init__.py:66: ScrapyDeprecationWarning: WebScraperPipeline.process_item() requires a spider argument, this is deprecated and the argument will not be passed in future Scrapy versions. If you need to access the spider instance you can save the crawler instance passed to from_crawler() and use its spider attribute.
+  self._check_mw_method_spider_arg(mw.process_item)
+
+2026-09-02 15:10:01 [scrapy.core.engine] INFO: Spider opened
+2026-09-02 15:10:01 [scrapy.extensions.logstats] INFO: Crawled 0 pages (at 0 pages/min), scraped 0 items (at 0 items/min)
+2026-09-02 15:10:01 [scrapy.extensions.telnet] INFO: Telnet console listening on 127.0.0.1:6023
+2026-09-02 15:10:01 [urllib3.connectionpool] DEBUG: Starting new HTTPS connection (1): call4.tgju.org:443
+2026-09-02 15:10:02 [urllib3.connectionpool] DEBUG: https://call4.tgju.org:443 "GET /ajax.json?rev=XjM9klM7SZvEdbsegxr3y3K3i3fZyi79VnB3ACfQhUTFLoakHIDorJz3nfT4 HTTP/1.1" 200 None
+2026-09-02 15:10:02 [scrapy.core.scraper] DEBUG: Scraped from web_scraper.spiders.market.marketspider.start
+{'coin': '2,259,850,000',
+ 'gold_18k': '225,370,000',
+ 'ons_gold': '4,317.99',
+ 'silver': '4,711,900',
+ 'timestamp': '2026-09-02  15:10:02'}
+2026-09-02 15:10:02 [scrapy.core.engine] INFO: Closing spider (finished)
+2026-09-02 15:10:02 [scrapy.statscollectors] INFO: Dumping Scrapy stats:
+{'elapsed_time_seconds': 0.8372394799989706,
+ 'finish_reason': 'finished',
+ 'finish_time': datetime.datetime(2026, 9, 2, 11, 40, 2, 767570, tzinfo=datetime.timezone.utc),
+ 'item_scraped_count': 1,
+ 'items_per_minute': None,
+ 'log_count/DEBUG': 3,
+ 'log_count/INFO': 3,
+ 'memusage/max': 72859648,
+ 'memusage/startup': 72859648,
+ 'responses_per_minute': None,
+ 'start_time': datetime.datetime(2026, 9, 2, 11, 40, 1, 930327, tzinfo=datetime.timezone.utc)}
+2026-09-02 15:10:02 [scrapy.core.engine] INFO: Spider closed (finished)
+Running cleaning...
+<class 'pandas.DataFrame'>
+RangeIndex: 35 entries, 0 to 34
+Data columns (total 5 columns):
+ #   Column     Non-Null Count  Dtype  
+---  ------     --------------  -----  
+ 0   timestamp  35 non-null     str    
+ 1   gold_18k   35 non-null     str    
+ 2   ons_gold   35 non-null     float64
+ 3   silver     35 non-null     str    
+ 4   coin       35 non-null     str    
+dtypes: float64(1), str(4)
+memory usage: 1.5 KB
+None
+<class 'pandas.DataFrame'>
+RangeIndex: 35 entries, 0 to 34
+Data columns (total 5 columns):
+ #   Column     Non-Null Count  Dtype  
+---  ------     --------------  -----  
+ 0   timestamp  35 non-null     str    
+ 1   gold_18k   35 non-null     str    
+ 2   ons_gold   35 non-null     float64
+ 3   silver     35 non-null     int64  
+ 4   coin       35 non-null     str    
+dtypes: float64(1), int64(1), str(3)
+memory usage: 1.5 KB
+None
+<class 'pandas.DataFrame'>
+RangeIndex: 35 entries, 0 to 34
+Data columns (total 5 columns):
+ #   Column     Non-Null Count  Dtype  
+---  ------     --------------  -----  
+ 0   timestamp  35 non-null     str    
+ 1   gold_18k   35 non-null     str    
+ 2   ons_gold   35 non-null     float64
+ 3   silver     35 non-null     int64  
+ 4   coin       35 non-null     int64  
+dtypes: float64(1), int64(2), str(2)
+memory usage: 1.5 KB
+None
+<class 'pandas.DataFrame'>
+RangeIndex: 35 entries, 0 to 34
+Data columns (total 5 columns):
+ #   Column     Non-Null Count  Dtype  
+---  ------     --------------  -----  
+ 0   timestamp  35 non-null     str    
+ 1   gold_18k   35 non-null     int64  
+ 2   ons_gold   35 non-null     float64
+ 3   silver     35 non-null     int64  
+ 4   coin       35 non-null     int64  
+dtypes: float64(1), int64(3), str(1)
+memory usage: 1.5 KB
+None
+DONE
+Running Scrapy...
+2026-09-02 15:20:02 [scrapy.utils.log] INFO: Scrapy 2.18.0 started (bot: web_scraper)
+2026-09-02 15:20:02 [scrapy.utils.log] INFO: Versions:
+{'lxml': '6.1.2',
+ 'libxml2': '2.14.6',
+ 'cssselect': '1.5.0',
+ 'parsel': '1.11.0',
+ 'w3lib': '2.4.1',
+ 'Twisted': '26.4.0',
+ 'Python': '3.13.7 (main, Mar  3 2026, 12:19:54) [GCC 15.2.0]',
+ 'pyOpenSSL': '26.4.0 (OpenSSL 4.0.2 25 Aug 2026)',
+ 'cryptography': '50.0.1',
+ 'Platform': 'Linux-6.17.0-41-generic-x86_64-with-glibc2.42'}
+2026-09-02 15:20:02 [scrapy.crawler] DEBUG: Using AsyncCrawlerProcess
+2026-09-02 15:20:02 [asyncio] DEBUG: Using selector: EpollSelector
+2026-09-02 15:20:02 [scrapy.addons] INFO: Enabled addons:
+[]
+2026-09-02 15:20:02 [scrapy.utils.log] DEBUG: Using reactor: twisted.internet.asyncioreactor.AsyncioSelectorReactor
+2026-09-02 15:20:02 [scrapy.utils.log] DEBUG: Using asyncio event loop: asyncio.unix_events._UnixSelectorEventLoop
+2026-09-02 15:20:02 [scrapy.extensions.telnet] INFO: Telnet Password: b2272bf05e892cb1
+2026-09-02 15:20:02 [scrapy.middleware] INFO: Enabled extensions:
+['scrapy.extensions.corestats.CoreStats',
+ 'scrapy.extensions.logcount.LogCount',
+ 'scrapy.extensions.telnet.TelnetConsole',
+ 'scrapy.extensions.memusage.MemoryUsage',
+ 'scrapy.extensions.logstats.LogStats']
+2026-09-02 15:20:02 [scrapy.crawler] INFO: Overridden settings:
+{'BOT_NAME': 'web_scraper',
+ 'CONCURRENT_REQUESTS_PER_DOMAIN': 1,
+ 'DOWNLOAD_DELAY': 1,
+ 'DOWNLOAD_TIMEOUT': 30,
+ 'FEED_EXPORT_ENCODING': 'utf-8',
+ 'NEWSPIDER_MODULE': 'web_scraper.spiders',
+ 'ROBOTSTXT_OBEY': True,
+ 'SPIDER_MODULES': ['web_scraper.spiders']}
+2026-09-02 15:20:02 [scrapy.middleware] INFO: Enabled downloader middlewares:
+['scrapy.downloadermiddlewares.offsite.OffsiteMiddleware',
+ 'scrapy.downloadermiddlewares.robotstxt.RobotsTxtMiddleware',
+ 'scrapy.downloadermiddlewares.httpauth.HttpAuthMiddleware',
+ 'scrapy.downloadermiddlewares.downloadtimeout.DownloadTimeoutMiddleware',
+ 'scrapy.downloadermiddlewares.defaultheaders.DefaultHeadersMiddleware',
+ 'scrapy.downloadermiddlewares.useragent.UserAgentMiddleware',
+ 'scrapy.downloadermiddlewares.retry.RetryMiddleware',
+ 'scrapy.downloadermiddlewares.redirect.MetaRefreshMiddleware',
+ 'scrapy.downloadermiddlewares.httpcompression.HttpCompressionMiddleware',
+ 'scrapy.downloadermiddlewares.redirect.RedirectMiddleware',
+ 'scrapy.downloadermiddlewares.cookies.CookiesMiddleware',
+ 'scrapy.downloadermiddlewares.httpproxy.HttpProxyMiddleware',
+ 'scrapy.downloadermiddlewares.stats.DownloaderStats']
+2026-09-02 15:20:02 [scrapy.middleware] INFO: Enabled spider middlewares:
+['scrapy.spidermiddlewares.start.StartSpiderMiddleware',
+ 'scrapy.spidermiddlewares.httperror.HttpErrorMiddleware',
+ 'scrapy.spidermiddlewares.referer.RefererMiddleware',
+ 'scrapy.spidermiddlewares.urllength.UrlLengthMiddleware',
+ 'scrapy.spidermiddlewares.depth.DepthMiddleware',
+ 'scrapy.spidermiddlewares.metacopy.MetaCopyDetectionMiddleware']
+2026-09-02 15:20:02 [scrapy.middleware] INFO: Enabled item pipelines:
+['web_scraper.pipelines.WebScraperPipeline']
+2026-09-02 15:20:02 [py.warnings] WARNING: /home/pc/Documents/web scrapy/web_scraper/.venv/lib/python3.13/site-packages/scrapy/pipelines/__init__.py:60: ScrapyDeprecationWarning: WebScraperPipeline.open_spider() requires a spider argument, this is deprecated and the argument will not be passed in future Scrapy versions. If you need to access the spider instance you can save the crawler instance passed to from_crawler() and use its spider attribute.
+  self._check_mw_method_spider_arg(mw.open_spider)
+
+2026-09-02 15:20:02 [py.warnings] WARNING: /home/pc/Documents/web scrapy/web_scraper/.venv/lib/python3.13/site-packages/scrapy/pipelines/__init__.py:63: ScrapyDeprecationWarning: WebScraperPipeline.close_spider() requires a spider argument, this is deprecated and the argument will not be passed in future Scrapy versions. If you need to access the spider instance you can save the crawler instance passed to from_crawler() and use its spider attribute.
+  self._check_mw_method_spider_arg(mw.close_spider)
+
+2026-09-02 15:20:02 [py.warnings] WARNING: /home/pc/Documents/web scrapy/web_scraper/.venv/lib/python3.13/site-packages/scrapy/pipelines/__init__.py:66: ScrapyDeprecationWarning: WebScraperPipeline.process_item() requires a spider argument, this is deprecated and the argument will not be passed in future Scrapy versions. If you need to access the spider instance you can save the crawler instance passed to from_crawler() and use its spider attribute.
+  self._check_mw_method_spider_arg(mw.process_item)
+
+2026-09-02 15:20:02 [scrapy.core.engine] INFO: Spider opened
+2026-09-02 15:20:02 [scrapy.extensions.logstats] INFO: Crawled 0 pages (at 0 pages/min), scraped 0 items (at 0 items/min)
+2026-09-02 15:20:02 [scrapy.extensions.telnet] INFO: Telnet console listening on 127.0.0.1:6023
+2026-09-02 15:20:02 [urllib3.connectionpool] DEBUG: Starting new HTTPS connection (1): call4.tgju.org:443
+2026-09-02 15:20:03 [urllib3.connectionpool] DEBUG: https://call4.tgju.org:443 "GET /ajax.json?rev=XjM9klM7SZvEdbsegxr3y3K3i3fZyi79VnB3ACfQhUTFLoakHIDorJz3nfT4 HTTP/1.1" 200 None
+2026-09-02 15:20:03 [scrapy.core.scraper] DEBUG: Scraped from web_scraper.spiders.market.marketspider.start
+{'coin': '2,259,850,000',
+ 'gold_18k': '225,370,000',
+ 'ons_gold': '4,317.99',
+ 'silver': '4,711,900',
+ 'timestamp': '2026-09-02  15:20:03'}
+2026-09-02 15:20:03 [scrapy.core.engine] INFO: Closing spider (finished)
+2026-09-02 15:20:03 [scrapy.statscollectors] INFO: Dumping Scrapy stats:
+{'elapsed_time_seconds': 0.8563215309986845,
+ 'finish_reason': 'finished',
+ 'finish_time': datetime.datetime(2026, 9, 2, 11, 50, 3, 39961, tzinfo=datetime.timezone.utc),
+ 'item_scraped_count': 1,
+ 'items_per_minute': None,
+ 'log_count/DEBUG': 3,
+ 'log_count/INFO': 3,
+ 'memusage/max': 72953856,
+ 'memusage/startup': 72953856,
+ 'responses_per_minute': None,
+ 'start_time': datetime.datetime(2026, 9, 2, 11, 50, 2, 183637, tzinfo=datetime.timezone.utc)}
+2026-09-02 15:20:03 [scrapy.core.engine] INFO: Spider closed (finished)
+Running cleaning...
+<class 'pandas.DataFrame'>
+RangeIndex: 36 entries, 0 to 35
+Data columns (total 5 columns):
+ #   Column     Non-Null Count  Dtype  
+---  ------     --------------  -----  
+ 0   timestamp  36 non-null     str    
+ 1   gold_18k   36 non-null     str    
+ 2   ons_gold   36 non-null     float64
+ 3   silver     36 non-null     str    
+ 4   coin       36 non-null     str    
+dtypes: float64(1), str(4)
+memory usage: 1.5 KB
+None
+<class 'pandas.DataFrame'>
+RangeIndex: 36 entries, 0 to 35
+Data columns (total 5 columns):
+ #   Column     Non-Null Count  Dtype  
+---  ------     --------------  -----  
+ 0   timestamp  36 non-null     str    
+ 1   gold_18k   36 non-null     str    
+ 2   ons_gold   36 non-null     float64
+ 3   silver     36 non-null     int64  
+ 4   coin       36 non-null     str    
+dtypes: float64(1), int64(1), str(3)
+memory usage: 1.5 KB
+None
+<class 'pandas.DataFrame'>
+RangeIndex: 36 entries, 0 to 35
+Data columns (total 5 columns):
+ #   Column     Non-Null Count  Dtype  
+---  ------     --------------  -----  
+ 0   timestamp  36 non-null     str    
+ 1   gold_18k   36 non-null     str    
+ 2   ons_gold   36 non-null     float64
+ 3   silver     36 non-null     int64  
+ 4   coin       36 non-null     int64  
+dtypes: float64(1), int64(2), str(2)
+memory usage: 1.5 KB
+None
+<class 'pandas.DataFrame'>
+RangeIndex: 36 entries, 0 to 35
+Data columns (total 5 columns):
+ #   Column     Non-Null Count  Dtype  
+---  ------     --------------  -----  
+ 0   timestamp  36 non-null     str    
+ 1   gold_18k   36 non-null     int64  
+ 2   ons_gold   36 non-null     float64
+ 3   silver     36 non-null     int64  
+ 4   coin       36 non-null     int64  
+dtypes: float64(1), int64(3), str(1)
+memory usage: 1.5 KB
+None
+DONE
